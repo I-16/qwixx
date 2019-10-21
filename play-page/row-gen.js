@@ -17,6 +17,8 @@ export const generateRow = (rowId, index) => {
         spanTextContent = 12 - index;
     }
 
+
+
     const spanString = rowId + '-box';
 
     span.classList.add(spanString);

@@ -1,1 +1,1 @@
-import './row-gen-test.js';
+import './example.test.js';
