@@ -1,0 +1,35 @@
+input.blue {
+    background: blue
+}
+
+input.red {
+    background: red
+}
+
+input.yellow {
+    background: yellow
+}
+
+input.green {
+    background: green
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.red-box {
+    background: lightcoral;
+    color: black;
+    /* padding: 10px; */
+    border: 1px solid red;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=checkbox]:checked + span {
+    text-decoration: line-through;
+}
