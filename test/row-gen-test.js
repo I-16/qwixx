@@ -6,7 +6,7 @@ test('generateRow should output an HTML label object', function(assert) {
     const rowId = 'red';
     const index = 3;
 
-    const expected = "<label></label>";
+    const expected = '<label></label>';
     const test = generateRow(rowId, index);
     const testOutput = '"' + test + '"';
 
