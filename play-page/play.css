@@ -14,14 +14,13 @@ input.green {
     background: green
 }
 
-input[type=checkbox] {
+/* input[type=checkbox] {
     display: none;
-}
+} */
 
 .red-box {
     background: lightcoral;
     color: black;
-    /* padding: 10px; */
     border: 1px solid red;
     height: 40px;
     width: 40px;
