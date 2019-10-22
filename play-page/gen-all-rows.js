@@ -9,8 +9,8 @@ export const generateAllRows = (rowId) => {
         rowBoxes.push(row);
     }
 
-    rowBoxes[10].setAttribute('disabled', true);
-    rowBoxes[11].setAttribute('disabled', true);
+    rowBoxes[10].children[0].setAttribute('disabled', true);
+    rowBoxes[11].children[0].setAttribute('disabled', true);
 
     return rowBoxes;
 };
