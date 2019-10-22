@@ -22,12 +22,10 @@ input.green {
  }
  input.green, .die:nth-of-type(5) {
     background: green;
-    color: white;
  }
  input.blue,
  .die:nth-of-type(6) {
-    background: blue;
-    color: white;
+    background: rgb(31, 99, 163);
  } 
 
 /* input[type=checkbox] {
