@@ -1,4 +1,4 @@
-import { getUser, getHighScore, makeHighScore } from '../common/utils.js';
+import { getUser, getHighScore, makeHighScore, saveHighScore } from '../common/utils.js';
 
 const userNameSpan = document.getElementById('user-name-span');
 const userScoreSpan = document.getElementById('user-score-span');
