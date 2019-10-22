@@ -3,7 +3,7 @@ export const disableLeftInputs = (boxArray) => {
 
     //find the index of the last checked element
     for (let i = 0; i < boxArray.length; i++){
-        if (boxArray[i].checked === true){ // can delete if boolean is falsy
+        if (boxArray[i].children[0].checked === true){ // can delete if boolean is falsy
             lastIndex = i;
         }
     }
