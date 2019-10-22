@@ -8,13 +8,13 @@ export const generateRow = (rowId, index) => {
     input.classList.add(rowId);
     
     if (rowId === 'red' || rowId === 'yellow'){
-        input.id = rowId + (index + 2);
-        input.value = index + 2;
-        spanTextContent = index + 2;
+        input.id = rowId + (parseInt(index) + 2);
+        input.value = parseInt(index) + 2;
+        spanTextContent = parseInt(index) + 2;
     } else {
-        input.id = rowId + (12 - index);
-        input.value = 12 - index;
-        spanTextContent = 12 - index;
+        input.id = rowId + (12 - parseInt(index));
+        input.value = 12 - parseInt(index);
+        spanTextContent = 12 - parseInt(index);
     }
 
 
