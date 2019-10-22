@@ -9,7 +9,7 @@ export const disableLeftInputs = (boxArray) => {
     }
 
     // go through the array and disable input on all boxes up to box[i]
-    for (let i = 0; i < lastIndex; i++){
-        boxArray[i].input = 'disabled';
+    for (let i = 0; i <= lastIndex; i++){
+        boxArray[i].children[0].setAttribute('disabled', true);
     }
 };
