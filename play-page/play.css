@@ -32,3 +32,5 @@ input.green {
 input[type=checkbox]:checked + span {
     text-decoration: line-through;
 }
+
+#dice {font-size: 6rem;}
