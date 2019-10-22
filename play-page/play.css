@@ -14,9 +14,25 @@ input.green {
     background: green
 }
 
+ input.red, .die:nth-of-type(3) {
+    background: red;
+ }
+ input.yellow, .die:nth-of-type(4) {
+    background: yellow;
+ }
+ input.green, .die:nth-of-type(5) {
+    background: green;
+    color: white;
+ }
+ input.blue,
+ .die:nth-of-type(6) {
+    background: blue;
+    color: white;
+ } 
+
 /* input[type=checkbox] {
     display: none;
-} */
+} */   
 
 .red-box {
     background: lightcoral;
@@ -33,4 +49,6 @@ input[type=checkbox]:checked + span {
     text-decoration: line-through;
 }
 
-#dice {font-size: 6rem;}
+.die {
+    font-size: 6rem;
+}
