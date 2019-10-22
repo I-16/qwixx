@@ -2,6 +2,8 @@ import { generateAllRows } from './gen-all-rows.js';
 import { disableLeftInputs } from './dis-left-inputs.js';
 import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
+import { updateScores } from './update-scores.js';
+import { calculateSessionScore } from './calc-session-score.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -12,7 +14,9 @@ const yellowScoreDisplay = document.getElementById('yellow-score');
 const greenScoreDisplay = document.getElementById('green-score');
 const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
+const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
+let currentSessionScore;
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
@@ -23,12 +27,13 @@ allRows.forEach(row => {
     });
 });
 
-const updateScoresDisplay = (scoreArray) => {
+const updateScoresDisplay = (scoreArray, sessionScore) => {
     redScoreDisplay.textContent = scoreArray[0];
     yellowScoreDisplay.textContent = scoreArray[1];
     greenScoreDisplay.textContent = scoreArray[2];
     blueScoreDisplay.textContent = scoreArray[3];
     penaltyScoreDisplay.textContent = scoreArray[4];
+    sessionScoreDisplay.textContent = sessionScore;
 };
 
 const confirmClick = () => {
@@ -36,30 +41,34 @@ const confirmClick = () => {
     let yellowDomArray = document.querySelectorAll('#yellow-row label');
     let greenDomArray = document.querySelectorAll('#green-row label');
     let blueDomArray = document.querySelectorAll('#blue-row label');
+    let penaltyDomArray = document.querySelectorAll('#penalty-boxes label');
 
     let redArray = scrapeArray(redDomArray);
     let yellowArray = scrapeArray(yellowDomArray);
     let greenArray = scrapeArray(greenDomArray);
     let blueArray = scrapeArray(blueDomArray);
+    let penaltyArray = scrapeArray(penaltyDomArray);
 
-    [redArray, yellowArray, greenArray, blueArray].forEach(array => {
+    const allColorArrays = [redArray, yellowArray, greenArray, blueArray, penaltyArray];
+
+    allColorArrays.forEach(array => {
         disableLeftInputs(array);
     });
 
-    
-    // allRows.forEach(row => {
-    //     disableLeftInputs(row);
-    //     const numberOfChecks = countChecks(row);
-    //     const colorScore = scoreColor(numberOfChecks);
-    //     scoreArray.push(colorScore);
-    // });
-    // let scoreArray = [];
-    // const penaltyBoxArray = document.querySelectorAll('input[type=checkbox].penalty');
-    // const penaltyCount = countChecks(penaltyBoxArray);
-    // const penaltyScore = scorePenalties(penaltyCount);
-    // scoreArray.push(penaltyScore);
+    let countArray = [];
 
-    // updateScoresDisplay(scoreArray);
+    allColorArrays.forEach(array => {
+        const arrayChecks = countChecks(array);
+        countArray.push(arrayChecks);
+    });
+
+    const scoreArray = updateScores(countArray);
+
+    const sessionScore = calculateSessionScore(scoreArray);
+    currentSessionScore = sessionScore;
+
+    updateScoresDisplay(scoreArray, sessionScore);
+
 };
 
 confirmButton.addEventListener('click', confirmClick);
