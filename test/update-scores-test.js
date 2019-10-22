@@ -4,7 +4,7 @@ import { updateScores } from '../play-page/update-scores.js';
 
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
+test('takes the counts for each row and returns an array of their scores', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const redCount = 1;
