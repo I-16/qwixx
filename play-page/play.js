@@ -1,6 +1,7 @@
 import { generateAllRows } from './gen-all-rows.js';    
 import { disableLeftInputs } from './dis-left-inputs.js';
 import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
+import { scrapeArray } from './scrape-array.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -31,6 +32,13 @@ const updateScoresDisplay = (scoreArray) => {
 };
 
 const confirmClick = () => {
+    let redDomArray = document.querySelectorAll('#red-row label');
+    let yellowDomArray = document.querySelectorAll('#yellow-row label');
+    let greenDomArray = document.querySelectorAll('#green-row label');
+    let blueDomArray = document.querySelectorAll('#blue-row label');
+
+    let testArray = scrapeArray(redDomArray);
+
     let scoreArray = [];
     
     allRows.forEach(row => {
@@ -39,7 +47,6 @@ const confirmClick = () => {
         const colorScore = scoreColor(numberOfChecks);
         scoreArray.push(colorScore);
     });
-    console.log(scoreArray);
 
     const penaltyBoxArray = document.querySelectorAll('input[type=checkbox].penalty');
     const penaltyCount = countChecks(penaltyBoxArray);
