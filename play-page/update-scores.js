@@ -1,6 +1,6 @@
 import { scoreColor, scorePenalties } from '../common/utils.js';
 
-export const updateScores = (redCount, yellowCount, greenCount, blueCount, penaltyCount) => {
+export const updateScores = ([redCount, yellowCount, greenCount, blueCount, penaltyCount]) => {
     // declare individual scores
     const firstScore = scoreColor(redCount);
     const secondScore = scoreColor(yellowCount);

@@ -100,7 +100,7 @@ input[type=checkbox]:checked + span {
     align-items: center;
 }
 
-.session-score-span {
+#session-score-span {
     display: inline-flex;
     width: 120px;
     height: 50px;
