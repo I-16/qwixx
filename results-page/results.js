@@ -4,5 +4,5 @@ let sessionData = getUser(); // high score object - name, sessionScore obj prope
 
 // compare the two scores, make new high score if this is a new high score
 if (highScore.sessionScore < sessionData.sessionScore) {
-
+    
 }
