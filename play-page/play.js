@@ -4,6 +4,7 @@ import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
+import { disableRow } from './disable-row.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -48,7 +49,6 @@ const confirmClick = () => {
     let greenArray = scrapeArray(greenDomArray);
     let blueArray = scrapeArray(blueDomArray);
     let penaltyArray = scrapeArray(penaltyDomArray);
-
     const allColorArrays = [redArray, yellowArray, greenArray, blueArray, penaltyArray];
 
     allColorArrays.forEach(array => {
@@ -64,7 +64,7 @@ const confirmClick = () => {
         }
         if (array[10].children[0].checked === true){
             array[11].children[0].checked === true;
-            // disableRow(array);
+            disableRow(array);
         }
         countArray.push(arrayChecks);
     });
