@@ -25,7 +25,7 @@ input.blue,
 }
 
 #dice-display {
-    font-size: 6rem;
+    font-size: 5rem;
 }
 
 input[type=checkbox] {
@@ -149,4 +149,10 @@ input[type=checkbox]:checked + span {
     width: 25px;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#dice-and-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
