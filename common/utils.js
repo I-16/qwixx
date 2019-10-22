@@ -31,6 +31,11 @@ export function saveUser(user) {
     localStorage.setItem('user', json);
 }
 
+export function saveHighScore(high) {
+    const json = JSON.stringify(high);
+    localStorage.setItem('high', json);
+}
+
 export function getUser() {
     const json = localStorage.getItem('user');
     if (!json) return null;
@@ -41,8 +46,8 @@ export function getUser() {
 export function getHighScore() {
     const json = localStorage.getItem('high');
     if (!json) return null;
-    const user = JSON.parse(json);
-    return user;
+    const high = JSON.parse(json);
+    return high;
 }
 
 export function makeUser(formData) {
@@ -53,10 +58,10 @@ export function makeUser(formData) {
     return user;
 }
 
-export function makeHighScore(formData) {
-    const user = {
-        name: formData.get('high'),
-        sessionScore: 0,
+export function makeHighScore(userName, userScore) {
+    const high = {
+        name: userName,
+        sessionScore: userScore,
     };
-    return user;
+    return high;
 }
