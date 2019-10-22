@@ -18,6 +18,7 @@ const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
 let currentSessionScore;
+const diceButton = document.querySelector('input[type=button]');
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
@@ -75,6 +76,7 @@ const confirmClick = () => {
     currentSessionScore = sessionScore;
 
     updateScoresDisplay(scoreArray, sessionScore);
+    diceButton.disabled = false;
 
 };
 

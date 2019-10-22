@@ -11,4 +11,6 @@ userSignUp.addEventListener('submit', function(event) {
 
     saveUser(player);
 
+    window.location = 'play-page';
+
 });
