@@ -59,6 +59,13 @@ const confirmClick = () => {
 
     allColorArrays.forEach(array => {
         const arrayChecks = countChecks(array);
+        if (arrayChecks > 4){
+            array[10].children[0].removeAttribute('disabled', true);
+        }
+        if (array[10].children[0].checked === true){
+            array[11].children[0].checked === true;
+            // disableRow(array);
+        }
         countArray.push(arrayChecks);
     });
 
