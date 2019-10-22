@@ -10,86 +10,53 @@
 <body>
     <div id="game-board">
         <div id="red-row">
-            <label>
-                <input type="checkbox" id="red2" class="red" value=2>
-                <span class="red-box">2</span>
-            </label>
-            <input type="checkbox" id="red3" class="red" value=3>
-            <input type="checkbox" id="red4" class="red" value=4>
-            <input type="checkbox" id="red5" class="red" value=5>
-            <input type="checkbox" id="red6" class="red" value=6>
-            <input type="checkbox" id="red7" class="red" value=7>
-            <input type="checkbox" id="red8" class="red" value=8>
-            <input type="checkbox" id="red9" class="red" value=9>
-            <input type="checkbox" id="red10" class="red" value=10>
-            <input type="checkbox" id="red11" class="red" value=11>
-            <input type="checkbox" id="red12" class="red locked" value=12>
+
         </div>
         <div id="yellow-row">
-                <input type="checkbox" id="yellow2" class="yellow" value=2>
-                <input type="checkbox" id="yellow3" class="yellow" value=3>
-                <input type="checkbox" id="yellow4" class="yellow" value=4>
-                <input type="checkbox" id="yellow5" class="yellow" value=5>
-                <input type="checkbox" id="yellow6" class="yellow" value=6>
-                <input type="checkbox" id="yellow7" class="yellow" value=7>
-                <input type="checkbox" id="yellow8" class="yellow" value=8>
-                <input type="checkbox" id="yellow9" class="yellow" value=9>
-                <input type="checkbox" id="yellow10" class="yellow" value=10>
-                <input type="checkbox" id="yellow11" class="yellow" value=11>
-                <input type="checkbox" id="yellow12" class="yellow locked" value=12>
+
         </div>
         <div id="green-row">
-            <input type="checkbox" id="green12" class="green" value=12>
-            <input type="checkbox" id="green11" class="green" value=11>
-            <input type="checkbox" id="green10" class="green" value=10>
-            <input type="checkbox" id="green9" class="green" value=9>
-            <input type="checkbox" id="green8" class="green" value=8>
-            <input type="checkbox" id="green7" class="green" value=7>
-            <input type="checkbox" id="green6" class="green" value=6>
-            <input type="checkbox" id="green5" class="green" value=5>
-            <input type="checkbox" id="green4" class="green" value=4>
-            <input type="checkbox" id="green3" class="green" value=3>
-            <input type="checkbox" id="green2" class="green locked" value=2>
+
         </div>
         <div id="blue-row">
-                <input type="checkbox" id="blue12" class="blue" value=12>
-                <input type="checkbox" id="blue11" class="blue" value=11>
-                <input type="checkbox" id="blue10" class="blue" value=10>
-                <input type="checkbox" id="blue9" class="blue" value=9>
-                <input type="checkbox" id="blue8" class="blue" value=8>
-                <input type="checkbox" id="blue7" class="blue" value=7>
-                <input type="checkbox" id="blue6" class="blue" value=6>
-                <input type="checkbox" id="blue5" class="blue" value=5>
-                <input type="checkbox" id="blue4" class="blue" value=4>
-                <input type="checkbox" id="blue3" class="blue" value=3>
-                <input type="checkbox" id="blue2" class="blue locked" value=2>
+
         </div>
     </div>
     <div id="score-display">
         <div id="score-boxes">
-            <span class="score-span"></span>
+            <span id="red-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="yellow-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="green-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="blue-score" class="score-span"></span>
             <span>-</span>
-            <span class="penalty-span"></span>
+            <span id="penalty-score" class="penalty-span"></span>
             <span>=</span>
             <span class="session-score-span"></span>
         </div>
         <div id="penalty-boxes">
-            <span>Penalty: -5 points each</span>
-            <label>
-                <input type="checkbox" class="penalty-checkbox">
-                <span></span>
+            <span id="penalty-description">Penalty boxes: -5 points each</span>
+            <label id="penalty1">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
             </label>
-            <input type="checkbox" class="penalty-checkbox">
-            <input type="checkbox" class="penalty-checkbox">
-            <input type="checkbox" class="penalty-checkbox">
+            <label id="penalty2">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
+            <label id="penalty3">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
+            <label id="penalty4">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
         </div>
     </div>
+    <div id="dice-and-buttons">
     <div id="dice-display">
         <span id="common-die-1">&#x2680</span>
         <span id="common-die-2">&#x2681</span>
@@ -98,9 +65,12 @@
         <span id="green-die">&#x2684</span>
         <span id="blue-die">&#x2685</span>
     </div>
+    <div id="buttons">
         <input type="button" value="Roll">
         <button id="confirm-button">Confirm</button>
         <button id="end-game-button">End Game</button>
+    </div>
+</div>
     <hr>
     <div id="mock-up">
         <img src="../assets/wireframes/Quixx-mobile-MVP.png" />
