@@ -25,3 +25,38 @@ export function scorePenalties(penaltyChecksCounted) {
     const penaltyScore = (penaltyChecksCounted * 5);
     return penaltyScore;
 }
+
+export function saveUser(user) {
+    const json = JSON.stringify(user);
+    localStorage.setItem('user', json);
+}
+
+export function getUser() {
+    const json = localStorage.getItem('user');
+    if (!json) return null;
+    const user = JSON.parse(json);
+    return user;
+}
+
+export function getHighScore() {
+    const json = localStorage.getItem('high');
+    if (!json) return null;
+    const user = JSON.parse(json);
+    return user;
+}
+
+export function makeUser(formData) {
+    const user = {
+        name: formData.get('name'),
+        sessionScore: 0,
+    };
+    return user;
+}
+
+export function makeHighScore(formData) {
+    const user = {
+        name: formData.get('high'),
+        sessionScore: 0,
+    };
+    return user;
+}
