@@ -18,7 +18,7 @@ export const generateRow = (rowId, index) => {
     }
 
     if (index === 11) {
-        spanTextContent = '';
+        spanTextContent = null;
         span.classList.add('fas', 'fa-lock');
     }
 

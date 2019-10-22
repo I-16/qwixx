@@ -12,7 +12,7 @@ function getUser() {
 
 function makeUser(formData) {
     const user = {
-        name: formData.get('name'),
+        name: formData.get('user-name'),
         sessionScore: 0,
     };
     return user;
