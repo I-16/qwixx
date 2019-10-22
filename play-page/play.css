@@ -28,9 +28,9 @@ input.green {
     background: rgb(31, 99, 163);
  } 
 
-/* input[type=checkbox] {
+input[type=checkbox] {
     display: none;
-} */   
+}   
 
 .red-box {
     background: lightcoral;
@@ -38,9 +38,48 @@ input.green {
     border: 1px solid red;
     height: 40px;
     width: 40px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.yellow-box {
+    background: lightgoldenrodyellow;
+    color: black;
+    border: 1px solid yellow;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.green-box {
+    background: lightgreen;
+    color: black;
+    border: 1px solid green;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blue-box {
+    background: lightskyblue;
+    color: black;
+    border: 1px solid blue;
+    height: 40px;
+    width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas.fa-lock {
+    display: inline-flex; 
+    position: relative;
+    top: 1.5px;
 }
 
 input[type=checkbox]:checked + span {
