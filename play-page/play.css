@@ -14,9 +14,23 @@ input.green {
     background: green
 }
 
+ input.red, .die:nth-of-type(3) {
+    background: red;
+ }
+ input.yellow, .die:nth-of-type(4) {
+    background: yellow;
+ }
+ input.green, .die:nth-of-type(5) {
+    background: green;
+ }
+ input.blue,
+ .die:nth-of-type(6) {
+    background: rgb(31, 99, 163);
+ } 
+
 /* input[type=checkbox] {
     display: none;
-} */
+} */   
 
 .red-box {
     background: lightcoral;
@@ -31,4 +45,8 @@ input.green {
 
 input[type=checkbox]:checked + span {
     text-decoration: line-through;
+}
+
+.die {
+    font-size: 6rem;
 }
