@@ -1,4 +1,5 @@
-document.querySelector('input[type=button]').addEventListener('click', function(){rollDice();});
+const diceButton = document.querySelector('input[type=button]');
+diceButton.addEventListener('click', function(){rollDice();});
 
 const rollDice = function() {
     let i,
@@ -14,6 +15,7 @@ const rollDice = function() {
     }
     document.getElementById('dice-display').innerHTML = output;
     faceValue++;
+    diceButton.disabled = true;
     return diceRollArray; 
 };
 
