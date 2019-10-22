@@ -24,27 +24,36 @@
     </div>
     <div id="score-display">
         <div id="score-boxes">
-            <span class="score-span"></span>
+            <span id="red-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="yellow-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="green-score" class="score-span"></span>
             <span>+</span>
-            <span class="score-span"></span>
+            <span id="blue-score" class="score-span"></span>
             <span>-</span>
-            <span class="penalty-span"></span>
+            <span id="penalty-score" class="penalty-span"></span>
             <span>=</span>
             <span class="session-score-span"></span>
         </div>
         <div id="penalty-boxes">
-            <span>Penalty: -5 points each</span>
-            <label>
-                <input type="checkbox" class="penalty-checkbox">
-                <span></span>
+            <span id="penalty-description">Penalty boxes: -5 points each</span>
+            <label id="penalty1">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
             </label>
-            <input type="checkbox" class="penalty-checkbox">
-            <input type="checkbox" class="penalty-checkbox">
-            <input type="checkbox" class="penalty-checkbox">
+            <label id="penalty2">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
+            <label id="penalty3">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
+            <label id="penalty4">
+                <input type="checkbox" class="penalty">
+                <span class="penalty-checkbox-span"></span>
+            </label>
         </div>
     </div>
     <div id="dice-display">
