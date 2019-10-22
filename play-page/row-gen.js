@@ -17,7 +17,10 @@ export const generateRow = (rowId, index) => {
         spanTextContent = 12 - index;
     }
 
-
+    if (index === 11) {
+        spanTextContent = '';
+        span.classList.add('fas fa-lock');
+    }
 
     const spanString = rowId + '-box';
 
