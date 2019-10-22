@@ -2,7 +2,7 @@ import { generateRow } from '../play-page/row-gen.js';
 
 const test = QUnit.test;
 
-test('generateRow should output an HTML label object', function(assert) {
+test('scoreChecked ', function(assert) {
     const rowId = 'red';
     const index = 3;
 
