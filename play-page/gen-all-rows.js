@@ -4,12 +4,13 @@ export const generateAllRows = (rowId) => {
     const sanitizedRowId = rowId.replace('-row', '');
     const rowBoxes = [];
 
-    for (let i = 0; i < 11; i++){
+    for (let i = 0; i < 12; i++){
         const row = generateRow(sanitizedRowId, i);
         rowBoxes.push(row);
     }
-    
+
+    rowBoxes[10].setAttribute('disabled', true);
+    rowBoxes[11].setAttribute('disabled', true);
+
     return rowBoxes;
 };
-
-// How do we handle the "lock" (i.e. 12th box)? I think it should be checked for on submit button.
