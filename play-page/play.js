@@ -1,10 +1,11 @@
-import { generateAllRows } from './gen-all-rows.js';    
+import { generateAllRows } from './gen-all-rows.js';
 import { disableLeftInputs } from './dis-left-inputs.js';
 import { countChecks } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
 import { disableRow } from './disable-row.js';
+import { detectPenaltyEndgame } from './endgame-detection.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -17,9 +18,10 @@ const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
+let rowsDisabledCount = 0;
 let currentSessionScore;
 const diceButton = document.querySelector('input[type=button]');
-
+let penaltyCount = 0;
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 allRows.forEach(row => {
@@ -57,6 +59,11 @@ const confirmClick = () => {
     let blueArray = scrapeArray(blueDomArray);
     let penaltyArray = scrapeArray(penaltyDomArray);
     const allColorArrays = [redArray, yellowArray, greenArray, blueArray, penaltyArray];
+    if (penaltyArray.length === 4) {
+        allColorArrays.forEach(array => {
+            disableRow(array);
+        });
+    }
 
     allColorArrays.forEach(array => {
         disableLeftInputs(array);
@@ -67,13 +74,15 @@ const confirmClick = () => {
     allColorArrays.forEach(array => {
         const arrayChecks = countChecks(array);
 
-        if (array.length > 4){
-            if (arrayChecks >= 5){
+        if (array.length > 4) {
+            if (arrayChecks >= 5) {
                 array[10].children[0].removeAttribute('disabled', true);
             }
-            if (array[10].children[0].checked === true){
+            if (array[10].children[0].checked === true) {
                 array[11].children[0].checked = true;
                 disableRow(array);
+                // rowsDisabledCount++;
+                // console.log(rowsDisabledCount);
             }
         }
 
