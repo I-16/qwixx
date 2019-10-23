@@ -21,6 +21,7 @@ const endGameButton = document.getElementById('end-game-button');
 let currentSessionScore;
 let currentUser = {};
 currentUser = getUser();
+const diceButton = document.querySelector('input[type=button]');
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
@@ -72,6 +73,7 @@ const confirmClick = () => {
     currentSessionScore = sessionScore;
 
     updateScoresDisplay(scoreArray, sessionScore);
+    diceButton.disabled = false;
 
 };
 
