@@ -12,5 +12,7 @@ export const generateAllRows = (rowId) => {
     rowBoxes[10].children[0].setAttribute('disabled', true);
     rowBoxes[11].children[0].setAttribute('disabled', true);
 
+    rowBoxes[10].children[0].addEventListener('change', onClick);    
+
     return rowBoxes;
 };
