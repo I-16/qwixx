@@ -1,14 +1,10 @@
 import { generateAllRows } from './gen-all-rows.js';    
 import { disableLeftInputs } from './dis-left-inputs.js';
-import { countChecks, getUser } from '../common/utils.js';
+import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
-<<<<<<< HEAD
 import { disableRow } from './disable-row.js';
-=======
-import { endGame } from './end-game.js';
->>>>>>> 94ef18e22b75f733cba5035d0f05707fcd50f06c
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -21,10 +17,7 @@ const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
-const endGameButton = document.getElementById('end-game-button');
 let currentSessionScore;
-let currentUser = {};
-currentUser = getUser();
 const diceButton = document.querySelector('input[type=button]');
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
@@ -52,10 +45,6 @@ const onClick = () => {
     let row = event.target.class;
     linkLastBoxes(row);
 };
-
-allRows.forEach(row => {
-    row[10].children[0].addEventListener('change', onClick);
-});
 
 const updateScoresDisplay = (scoreArray, sessionScore) => {
     redScoreDisplay.textContent = scoreArray[0];
@@ -112,9 +101,4 @@ const confirmClick = () => {
 
 };
 
-const endGameClick = () => {
-    endGame(currentUser.name, currentSessionScore);
-}
-
 confirmButton.addEventListener('click', confirmClick);
-endGameButton.addEventListener('click', endGameClick);
