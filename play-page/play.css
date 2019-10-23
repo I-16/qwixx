@@ -4,24 +4,32 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
-input.red, .die:nth-of-type(3) {
-   background: red;
+input.red,
+.die:nth-of-type(3) {
+    background: hsl(349, 76%, 50%);
+    ;
 }
-input.yellow, .die:nth-of-type(4) {
-   background: yellow;
+
+input.yellow,
+.die:nth-of-type(4) {
+    background: hsl(42, 96%, 62%);
 }
-input.green, .die:nth-of-type(5) {
-   background: green;
+
+input.green,
+.die:nth-of-type(5) {
+    background: hsl(114, 47%, 45%);
 }
+
 input.blue,
 .die:nth-of-type(6) {
-   background: rgb(31, 99, 163);
+    background: hsl(211, 65%, 40%);
 }
 
 .die {
-   font-size: 6rem;
+    font-size: 6rem;
 }
 
 #dice-display {
@@ -30,55 +38,113 @@ input.blue,
 
 input[type=checkbox] {
     display: none;
-}   
+}
 
-.red-box, .yellow-box, .green-box, .blue-box {
+/* Styles for disabled input boxes */
+input[type=checkbox]:disabled~.yellow-box {
+    background: hsl(42, 96%, 30%);
+    border: 3px solid hsl(42, 96%, 20%);
+    color: rgb(100, 100, 100)
+}
+
+input[type=checkbox]:disabled~.red-box {
+    background: hsla(349, 76%, 20%, 0.65);
+    border: 3px solid hsla(349, 20%, 30%, 0.65);
+    color: rgb(100, 100, 100)
+}
+
+input[type=checkbox]:disabled~.green-box {
+    background: hsl(114, 47%, 20%);
+    border: 3px solid hsl(114, 47%, 10%);
+    color: rgb(100, 100, 100)
+}
+
+input[type=checkbox]:disabled~.blue-box {
+    background: hsl(211, 35%, 40%);
+    border: 3px solid hsl(211, 65%, 40%);
+    color: rgb(100, 100, 100)
+}
+
+.red-box,
+.yellow-box,
+.green-box,
+.blue-box {
     color: black;
     height: 60px;
     width: 60px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 2px;
+    margin: 1px;
     border-radius: 5px;
     font-size: 1.4em;
 }
 
-.red-box, #red-score {
-    background: lightcoral;
-    border: 1px solid red;
+#red-score,
+#yellow-score,
+#blue-score,
+#green-score,
+#penalty-score,
+#session-score-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
 }
 
-.yellow-box, #yellow-score {
-    background: lightgoldenrodyellow;
-    border: 1px solid yellow;
+.red-box,
+#red-score {
+    background: hsl(349, 76%, 85%);
+    border: 3px solid hsl(349, 76%, 50%);
 }
 
-.green-box, #green-score {
-    background: lightgreen;
-    border: 1px solid green;
+.yellow-box,
+#yellow-score {
+    background: hsl(42, 100%, 91%);
+    border: 3px solid hsl(42, 96%, 62%);
 }
 
-.blue-box, #blue-score {
-    background: lightskyblue;
-    border: 1px solid blue;
+.green-box,
+#green-score {
+    background: hsl(114, 47%, 80%);
+    border: 3px solid hsl(114, 47%, 45%);
+}
+
+.blue-box,
+#blue-score {
+    background: hsl(211, 65%, 85%);
+    border: 3px solid hsl(211, 65%, 40%);
 }
 
 .fas.fa-lock {
-    display: inline-flex; 
+    display: inline-flex;
     position: relative;
     top: 1.5px;
 }
 
-input[type=checkbox]:checked + span {
-    text-decoration: line-through;
+input[type=checkbox]:checked+span {
+    /* text-decoration: line-through; */
 }
+
+input[type=checkbox]:checked+span:after {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: -5px;
+    right: 0;
+    content: "\274c";
+    font-size: 40px;
+    color: #FFF;
+    line-height: 30px;
+    text-align: center;
+}
+
 
 #score-display {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 69%;
+    /* width: 69%; */
 }
 
 #score-boxes {
@@ -87,7 +153,8 @@ input[type=checkbox]:checked + span {
     justify-content: center;
 }
 
-.score-span, .penalty-span {
+.score-span,
+.penalty-span {
     display: inline-flex;
     width: 64px;
     height: 50px;
@@ -120,13 +187,14 @@ input[type=checkbox]:checked + span {
     grid-column: 1/5;
     grid-row: 1/2;
     padding: 5px;
-    font-size: small;
+    font-size: 0.65rem;
+    ;
 }
 
 #penalty1 {
     grid-column: 1/2;
     grid-row: 2/3;
-} 
+}
 
 #penalty2 {
     grid-column: 2/3;
@@ -151,8 +219,7 @@ input[type=checkbox]:checked + span {
     border-radius: 5px;
 }
 
-#dice-and-buttons{
+#dice-and-buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
