@@ -194,5 +194,4 @@ input[type=checkbox]:checked+span:after {
 #dice-and-buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
