@@ -74,5 +74,9 @@ const confirmClick = () => {
 
 };
 
+const endGameClick = () => {
+    endGame(currentUser.name, currentSessionScore);
+}
+
 confirmButton.addEventListener('click', confirmClick);
-endGameButton.addEventListener('click', endGame(currentUser.name, currentSessionScore));
+endGameButton.addEventListener('click', endGameClick);
