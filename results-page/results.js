@@ -35,7 +35,7 @@ if (highScoreUserScore < userScore) {
 }
 
 // display user score and high score
-userNameSpan.textContent = userName;
-userScoreSpan.textContent = userScore;
-highScoreNameSpan.textContent = highScoreUserName;
-highScoreScoreSpan.textContent = highScoreUserScore;
+userNameSpan.textContent += userName;
+userScoreSpan.textContent += userScore;
+highScoreNameSpan.textContent += highScoreUserName;
+highScoreScoreSpan.textContent += highScoreUserScore;

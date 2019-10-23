@@ -19,7 +19,8 @@ const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
 const endGameButton = document.getElementById('end-game-button');
 let currentSessionScore;
-let currentUser = getUser();
+let currentUser = {};
+currentUser = getUser();
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
