@@ -79,42 +79,22 @@ body {
 
 .white-die [class$="face"] {
     background-color: #e7e7e7;
-    box-shadow: inset 0 1px white,
-        inset 0 -3px #bbb,
-        inset 1px 0 #d7d7d7,
-        inset -1px 0 #d7d7d7;
 }
 
 .red-die [class$="face"] {
-    background-color: RGB(224, 32, 67);
-    box-shadow: inset 0 1px white,
-        inset 0 -3px #bbb,
-        inset 1px 0 #d7d7d7,
-        inset -1px 0 #d7d7d7;
+    background-color: #e02043;
 }
 
 .yellow-die [class$="face"] {
     background-color: #FBC23F;
-    box-shadow: inset 0 1px white,
-        inset 0 -3px #bbb,
-        inset 1px 0 #d7d7d7,
-        inset -1px 0 #d7d7d7;
 }
 
 .blue-die [class$="face"] {
     background-color: #2465AA;
-    box-shadow: inset 0 1px white,
-        inset 0 -3px #bbb,
-        inset 1px 0 #d7d7d7,
-        inset -1px 0 #d7d7d7;
 }
 
 .green-die [class$="face"] {
     background-color: #46A73C;
-    box-shadow: inset 0 1px white,
-        inset 0 -3px #bbb,
-        inset 1px 0 #d7d7d7,
-        inset -1px 0 #d7d7d7;
 }
 
 .yellow-die [class$="face"],
