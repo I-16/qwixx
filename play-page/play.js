@@ -59,11 +59,6 @@ const confirmClick = () => {
     let blueArray = scrapeArray(blueDomArray);
     let penaltyArray = scrapeArray(penaltyDomArray);
     const allColorArrays = [redArray, yellowArray, greenArray, blueArray, penaltyArray];
-    if (penaltyArray.length === 4) {
-        allColorArrays.forEach(array => {
-            disableRow(array);
-        });
-    }
 
     allColorArrays.forEach(array => {
         disableLeftInputs(array);
@@ -90,13 +85,17 @@ const confirmClick = () => {
     });
 
     const scoreArray = updateScores(countArray);
-
+    
     const sessionScore = calculateSessionScore(scoreArray);
     currentSessionScore = sessionScore;
 
     updateScoresDisplay(scoreArray, sessionScore);
     diceButton.disabled = false;
-
+    if (countArray[4] === 4) {
+        allColorArrays.forEach(array => {
+            disableRow(array);
+        });
+    }
 };
 
 confirmButton.addEventListener('click', confirmClick);
