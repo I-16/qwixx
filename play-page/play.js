@@ -35,17 +35,6 @@ allRows.forEach(row => {
     });
 });
 
-const linkLastBoxes = (row) => {
-    if (row[10].children[0].checked){
-        row[11].children[0].checked;
-    }
-};
-
-const onClick = () => {
-    let row = event.target.class;
-    linkLastBoxes(row);
-};
-
 const updateScoresDisplay = (scoreArray, sessionScore) => {
     redScoreDisplay.textContent = scoreArray[0];
     yellowScoreDisplay.textContent = scoreArray[1];
