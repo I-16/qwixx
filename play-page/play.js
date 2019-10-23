@@ -1,6 +1,6 @@
 import { generateAllRows } from './gen-all-rows.js';    
 import { disableLeftInputs } from './dis-left-inputs.js';
-import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
+import { countChecks } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
