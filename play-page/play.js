@@ -5,7 +5,6 @@ import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
 import { disableRow } from './disable-row.js';
-import { detectPenaltyEndgame } from './endgame-detection.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -21,7 +20,6 @@ const confirmButton = document.getElementById('confirm-button');
 let rowsDisabledCount = 0;
 let currentSessionScore;
 const diceButton = document.querySelector('input[type=button]');
-let penaltyCount = 0;
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 allRows.forEach(row => {
