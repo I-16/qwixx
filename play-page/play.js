@@ -1,9 +1,10 @@
 import { generateAllRows } from './gen-all-rows.js';    
 import { disableLeftInputs } from './dis-left-inputs.js';
-import { countChecks, scoreColor, scorePenalties } from '../common/utils.js';
+import { countChecks, getUser } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
 import { updateScores } from './update-scores.js';
 import { calculateSessionScore } from './calc-session-score.js';
+import { endGame } from './end-game.js';
 
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
@@ -16,7 +17,10 @@ const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
+const endGameButton = document.getElementById('end-game-button');
 let currentSessionScore;
+let currentUser = {};
+currentUser = getUser();
 const diceButton = document.querySelector('input[type=button]');
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
@@ -73,4 +77,9 @@ const confirmClick = () => {
 
 };
 
+const endGameClick = () => {
+    endGame(currentUser.name, currentSessionScore);
+}
+
 confirmButton.addEventListener('click', confirmClick);
+endGameButton.addEventListener('click', endGameClick);
