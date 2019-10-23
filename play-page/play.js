@@ -1,4 +1,4 @@
-import { generateAllRows } from './gen-all-rows.js';    
+import { generateAllRows } from './gen-all-rows.js';
 import { disableLeftInputs } from './dis-left-inputs.js';
 import { countChecks } from '../common/utils.js';
 import { scrapeArray } from './scrape-array.js';
@@ -19,7 +19,6 @@ const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
 let currentSessionScore;
 const diceButton = document.querySelector('input[type=button]');
-
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 allRows.forEach(row => {
@@ -67,13 +66,15 @@ const confirmClick = () => {
     allColorArrays.forEach(array => {
         const arrayChecks = countChecks(array);
 
-        if (array.length > 4){
-            if (arrayChecks >= 5){
+        if (array.length > 4) {
+            if (arrayChecks >= 5) {
                 array[10].children[0].removeAttribute('disabled', true);
             }
-            if (array[10].children[0].checked === true){
+            if (array[10].children[0].checked === true) {
                 array[11].children[0].checked = true;
                 disableRow(array);
+                // rowsDisabledCount++;
+                // console.log(rowsDisabledCount);
             }
         }
 
@@ -81,13 +82,23 @@ const confirmClick = () => {
     });
 
     const scoreArray = updateScores(countArray);
-
+    
     const sessionScore = calculateSessionScore(scoreArray);
     currentSessionScore = sessionScore;
 
     updateScoresDisplay(scoreArray, sessionScore);
     diceButton.disabled = false;
-
+    
+    if (rowsDisabledCounter === 2) {
+        allColorArrays.forEach(array => {
+            disableRow(array);
+        });
+    }
+    if (countArray[4] === 4) {
+        allColorArrays.forEach(array => {
+            disableRow(array);
+        });
+    }
 };
 
 confirmButton.addEventListener('click', confirmClick);
