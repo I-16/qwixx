@@ -12,5 +12,11 @@ export const generateAllRows = (rowId) => {
     rowBoxes[10].children[0].setAttribute('disabled', true);
     rowBoxes[11].children[0].setAttribute('disabled', true);
 
+    rowBoxes[10].children[0].addEventListener('change', () => {
+        let flag;
+        flag = event.target.checked;
+        event.target.parentElement.nextSibling.children[0].checked = flag;
+    }); 
+
     return rowBoxes;
 };
