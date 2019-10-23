@@ -17,7 +17,6 @@ const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
-let rowsDisabledCount = 0;
 let currentSessionScore;
 const diceButton = document.querySelector('input[type=button]');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
@@ -89,6 +88,12 @@ const confirmClick = () => {
 
     updateScoresDisplay(scoreArray, sessionScore);
     diceButton.disabled = false;
+    
+    if (rowsDisabledCounter === 2) {
+        allColorArrays.forEach(array => {
+            disableRow(array);
+        });
+    }
     if (countArray[4] === 4) {
         allColorArrays.forEach(array => {
             disableRow(array);
