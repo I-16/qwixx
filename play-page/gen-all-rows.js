@@ -1,4 +1,5 @@
 import { generateRow } from './row-gen.js';
+import { countChecks } from '../common/utils.js';
 
 export const generateAllRows = (rowId) => {
     const sanitizedRowId = rowId.replace('-row', '');
@@ -11,6 +12,18 @@ export const generateAllRows = (rowId) => {
 
     rowBoxes[10].children[0].setAttribute('disabled', true);
     rowBoxes[11].children[0].setAttribute('disabled', true);
+
+    rowBoxes.forEach(box => {
+        box.children[0].addEventListener('change', () => {
+            if (countChecks(rowBoxes) === 5){
+                rowBoxes[10].children[0].removeAttribute('disabled', true);
+            } 
+            if (countChecks(rowBoxes) < 5){
+                rowBoxes[10].children[0].setAttribute('disabled', true);
+            }
+        });
+    });
+ 
 
     rowBoxes[10].children[0].addEventListener('change', () => {
         let flag;
