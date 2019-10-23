@@ -6,22 +6,28 @@ body {
     align-items: center;
 }
 
-input.red, .die:nth-of-type(3) {
-   background: red;
+input.red,
+.die:nth-of-type(3) {
+    background: red;
 }
-input.yellow, .die:nth-of-type(4) {
-   background: yellow;
+
+input.yellow,
+.die:nth-of-type(4) {
+    background: yellow;
 }
-input.green, .die:nth-of-type(5) {
-   background: green;
+
+input.green,
+.die:nth-of-type(5) {
+    background: green;
 }
+
 input.blue,
 .die:nth-of-type(6) {
-   background: rgb(31, 99, 163);
+    background: rgb(31, 99, 163);
 }
 
 .die {
-   font-size: 6rem;
+    font-size: 6rem;
 }
 
 #dice-display {
@@ -30,9 +36,12 @@ input.blue,
 
 input[type=checkbox] {
     display: none;
-}   
+}
 
-.red-box, .yellow-box, .green-box, .blue-box {
+.red-box,
+.yellow-box,
+.green-box,
+.blue-box {
     color: black;
     height: 60px;
     width: 60px;
@@ -44,35 +53,65 @@ input[type=checkbox] {
     font-size: 1.4em;
 }
 
-.red-box, #red-score {
+#red-score,
+#yellow-score,
+#blue-score,
+#green-score,
+#penalty-score,
+#session-score-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.red-box,
+#red-score {
     background: lightcoral;
     border: 1px solid red;
 }
 
-.yellow-box, #yellow-score {
+.yellow-box,
+#yellow-score {
     background: lightgoldenrodyellow;
     border: 1px solid yellow;
 }
 
-.green-box, #green-score {
+.green-box,
+#green-score {
     background: lightgreen;
     border: 1px solid green;
 }
 
-.blue-box, #blue-score {
+.blue-box,
+#blue-score {
     background: lightskyblue;
     border: 1px solid blue;
 }
 
 .fas.fa-lock {
-    display: inline-flex; 
+    display: inline-flex;
     position: relative;
     top: 1.5px;
 }
 
-input[type=checkbox]:checked + span {
-    text-decoration: line-through;
+input[type=checkbox]:checked+span {
+    /* text-decoration: line-through; */
 }
+
+input[type=checkbox]:checked+span:after {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: -5px;
+    right: 0;
+    content: "\274c";
+    font-size: 40px;
+    color: #FFF;
+    line-height: 30px;
+    text-align: center;
+}
+
 
 #score-display {
     display: flex;
@@ -87,7 +126,8 @@ input[type=checkbox]:checked + span {
     justify-content: center;
 }
 
-.score-span, .penalty-span {
+.score-span,
+.penalty-span {
     display: inline-flex;
     width: 64px;
     height: 50px;
@@ -126,7 +166,7 @@ input[type=checkbox]:checked + span {
 #penalty1 {
     grid-column: 1/2;
     grid-row: 2/3;
-} 
+}
 
 #penalty2 {
     grid-column: 2/3;
@@ -151,7 +191,7 @@ input[type=checkbox]:checked + span {
     border-radius: 5px;
 }
 
-#dice-and-buttons{
+#dice-and-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
