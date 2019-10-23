@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Kelly+Slab|Pompiere&display=swap');
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: center;
+	flex-wrap: wrap;
+	align-content: center;
+	font-family: 'Open Sans',
+    sans-serif;
+    background-color: hsl(42, 100%, 91%);
+    
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-family: 'Kelly Slab', cursive; 
+    font-size: 2rem;
+    background-color: #e02043;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+main {
+    margin: 0 4rem;
+}
+
+a {
+    background-color: darkblue;
+    color: whitesmoke;
+    font-size: 20px;
+    text-shadow: 1px black;
+    padding: 10px;
+    box-shadow: 5px 5px 3px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 20px;
+}
+
+a:hover {
+    background-color: turquoise;
+}
+
+p {
+    font-family: 'Pompiere', cursive;
+    font-size: 2rem;
+}
