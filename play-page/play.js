@@ -19,18 +19,41 @@ const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
 let currentSessionScore;
 const diceButton = document.querySelector('input[type=button]');
+let saveStateRedRow = [];
+let saveStateYellowRow = [];
+let saveStateGreenRow = [];
+let saveStateBlueRow = [];
+let redDisabledBool = false;
+let yellowDisabledBool = false;
+let greenDisabledBool = false;
+let blueDisabledBool = false;
 
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
+const saveDisabledState = (buttonId, rowArray) => {
+    switch (buttonId) {
+        case 'red':
+            saveStateRedRow = rowArray.slice;
+            break;
+        case 'yellow':
+            saveStateYellowRow = rowArray.slice;
+            break;
+        case 'green':
+            saveStateGreenRow = rowArray.slice;
+            break;
+        case 'blue':
+            saveStateBlueRow = rowArray.slice;
+            break;
+    }
+};
+
+export const disableClick = () => {
+    
+};
+
 allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
-    const disableBox = document.createElement('button');
-    disableBox.value = 'Disable row';
-    disableBox.addEventListener('click', () => {
-
-    });
     newRow.forEach(box => {
-        disableBox.class = box.children[0].class;
         row.appendChild(box);
     });
 });
@@ -91,3 +114,4 @@ const confirmClick = () => {
 };
 
 confirmButton.addEventListener('click', confirmClick);
+

@@ -1,5 +1,6 @@
 import { generateRow } from './row-gen.js';
 import { countChecks } from '../common/utils.js';
+import { disableClick } from '../play-page/play.js';
 
 export const generateAllRows = (rowId) => {
     const sanitizedRowId = rowId.replace('-row', '');
@@ -30,6 +31,13 @@ export const generateAllRows = (rowId) => {
         flag = event.target.checked;
         event.target.parentElement.nextSibling.children[0].checked = flag;
     }); 
+
+    const disableLabel = document.createElement('label');
+    const disableRowButton = document.createElement('button');
+    disableRowButton.addEventListener('click', disableClick);
+    disableRowButton.id = sanitizedRowId;
+    disableLabel.appendChild(disableRowButton);
+    rowBoxes.push(disableLabel);
 
     return rowBoxes;
 };
