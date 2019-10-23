@@ -24,9 +24,30 @@ const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
+    const disableBox = document.createElement('button');
+    disableBox.value = 'Disable row';
+    disableBox.addEventListener('click', () => {
+
+    });
     newRow.forEach(box => {
+        disableBox.class = box.children[0].class;
         row.appendChild(box);
     });
+});
+
+const linkLastBoxes = (row) => {
+    if (row[10].children[0].checked){
+        row[11].children[0].checked;
+    }
+};
+
+const onClick = () => {
+    let row = event.target.class;
+    linkLastBoxes(row);
+};
+
+allRows.forEach(row => {
+    row[10].children[0].addEventListener('change', onClick);
 });
 
 const updateScoresDisplay = (scoreArray, sessionScore) => {
@@ -60,13 +81,17 @@ const confirmClick = () => {
 
     allColorArrays.forEach(array => {
         const arrayChecks = countChecks(array);
-        if (arrayChecks > 4){
-            array[10].children[0].removeAttribute('disabled', true);
+
+        if (array.length > 4){
+            if (arrayChecks >= 5){
+                array[10].children[0].removeAttribute('disabled', true);
+            }
+            if (array[10].children[0].checked === true){
+                array[11].children[0].checked = true;
+                disableRow(array);
+            }
         }
-        if (array[10].children[0].checked === true){
-            array[11].children[0].checked === true;
-            disableRow(array);
-        }
+
         countArray.push(arrayChecks);
     });
 
