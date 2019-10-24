@@ -23,11 +23,15 @@ header {
 h1 {
     font-family: 'Bowlby One SC', cursive;
     font-size: 4.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h2 {
     font-family: 'Kelly Slab', cursive;
     font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h3 {
@@ -60,3 +64,39 @@ p {
     font-family: 'Pompiere', cursive;
     font-size: 2rem;
 }
+.note {
+    position: relative;
+    padding: 1em 1.5em;
+    margin: 5rem;
+    color: hsl(42, 100%, 91%);
+    background: hsl(114, 47%, 45%);
+    overflow: hidden;
+  }
+  
+  .note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: hsl(42, 100%, 91%) hsl(42, 100%, 91%) #658E15 #658E15;
+    background: #658E15;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    /* Firefox 3.0 damage limitation */
+    display: block; width: 0;
+  }
+  
+  .note.rounded {
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+  }
+  
+  .note.rounded:before {
+    border-width: 8px;
+    border-color: #fff #fff transparent transparent;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+  }
