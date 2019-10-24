@@ -21,6 +21,9 @@ export const generateAllRows = (rowId) => {
             if (countChecks(rowBoxes) < 5){
                 rowBoxes[10].children[0].setAttribute('disabled', true);
             }
+            if (countChecks(rowBoxes) === 3) {
+                alert("You can't do that!");
+            } 
         });
     });
  
