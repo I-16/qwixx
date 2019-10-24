@@ -23,19 +23,26 @@ let currentSessionScore = 0;
 const endGameButton = document.getElementById('end-game-button');
 const diceButton = document.querySelector('input[type=button]');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
-let disabledRowArray = [];
+let disabledCounter = 0;
 let currentUser = {};
 currentUser = getUser();
 
 allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
-    const disableBox = document.createElement('button');
-    disableBox.value = 'Disable row';
-    disableBox.addEventListener('click', () => {
-
+    const disableLabel = document.createElement('label');
+    const disableButton = document.createElement('button');
+    disableButton.addEventListener('click', () => {
+        const disableConf = confirm('Are you sure you want to disable this row?');
+        if (disableConf){
+            for (let i = 0; i < 13; i++){
+                event.target.parentElement.parentElement.children[i].children[0].setAttribute('disabled', true);
+            }
+            disabledCounter++;
+        }
     });
+    disableLabel.appendChild(disableButton);
+    newRow.push(disableLabel);
     newRow.forEach(box => {
-        disableBox.class = box.children[0].class;
         row.appendChild(box);
     });
 });
@@ -79,8 +86,6 @@ const confirmClick = () => {
             if (array[10].children[0].checked === true) {
                 array[11].children[0].checked = true;
                 disableRow(array);
-                // rowsDisabledCount++;
-                // console.log(rowsDisabledCount);
             }
         }
 
@@ -97,7 +102,7 @@ const confirmClick = () => {
     diceButton.disabled = false;
     
     
-    if (countArray[4] === 4 || disabledRowArray.length > 1) {
+    if (countArray[4] === 4 || disabledCounter > 1) {
         allColorArrays.forEach(array => {
             disableRow(array);
         });
