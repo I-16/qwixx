@@ -1,5 +1,5 @@
 export const disableLeftInputs = (boxArray) => {
-    let lastIndex = 0;
+    let lastIndex = -1;
 
     if (boxArray.length === 4) return;
     
