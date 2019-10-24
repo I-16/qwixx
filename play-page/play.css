@@ -128,9 +128,11 @@ input[type=checkbox]:checked+span {
 
 input[type=checkbox]:checked+span:after {
     position: relative;
-    top: 0;
+    top: 2px;
     bottom: 0;
-    left: -5px;
+    left: -10px;
+    margin-left: -20px;
+    margin-right: -20px;
     right: 0;
     content: "\274c";
     font-size: 40px;
