@@ -1,6 +1,6 @@
 export function countChecks(checkboxArray) {
     //accepts an array of
-    let checksCounted = 0;
+    let checksCounted = -1;
     for (let i = 0; i < checkboxArray.length; i++) {
         if (checkboxArray[i].children[0].checked === true) {
             checksCounted++;
