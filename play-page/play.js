@@ -19,7 +19,7 @@ const blueScoreDisplay = document.getElementById('blue-score');
 const penaltyScoreDisplay = document.getElementById('penalty-score');
 const sessionScoreDisplay = document.getElementById('session-score-span');
 const confirmButton = document.getElementById('confirm-button');
-let currentSessionScore;
+let currentSessionScore = 0;
 const endGameButton = document.getElementById('end-game-button');
 const diceButton = document.querySelector('input[type=button]');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
