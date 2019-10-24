@@ -31,33 +31,75 @@ let blueDisabledBool = false;
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 const saveDisabledState = (buttonId, rowArray) => {
+    let swapArray = [];
+    let disabledArray = [];
+
     switch (buttonId) {
         case 'red':
-            saveStateRedRow = rowArray.slice();
+            swapArray = rowArray.slice();
+            for (let i = 0; i < 13; i++){
+                const popForDisable = rowArray.pop();
+                disabledArray.push(popForDisable);
+            }
+            for (let i = 0; i < 13; i++){
+                const popForDisable = swapArray.pop();
+                saveStateRedRow.push(popForDisable);
+            }
             redDisabledBool = true;
-            break;
+            return disabledArray;
+
         case 'yellow':
-            saveStateYellowRow = rowArray.slice();
+            swapArray = rowArray.slice();
+            for (let i = 0; i < 13; i++){
+                const popForDisable = rowArray.pop();
+                disabledArray.push(popForDisable);
+            }
+            for (let i = 0; i < 13; i++){
+                const popForDisable = swapArray.pop();
+                saveStateYellowRow.push(popForDisable);
+            }
             yellowDisabledBool = true;
-            break;
+            return disabledArray;
+            
         case 'green':
-            saveStateGreenRow = rowArray.slice();
+            swapArray = rowArray.slice();
+            for (let i = 0; i < 13; i++){
+                const popForDisable = rowArray.pop();
+                disabledArray.push(popForDisable);
+            }
+            for (let i = 0; i < 13; i++){
+                const popForDisable = swapArray.pop();
+                saveStateGreenRow.push(popForDisable);
+            }
             greenDisabledBool = true;
-            break;
+            return disabledArray;
+            
         case 'blue':
-            saveStateBlueRow = rowArray.slice();
+            swapArray = rowArray.slice();
+            for (let i = 0; i < 13; i++){
+                const popForDisable = rowArray.pop();
+                disabledArray.push(popForDisable);
+            }
+            for (let i = 0; i < 13; i++){
+                const popForDisable = swapArray.pop();
+                saveStateBlueRow.push(popForDisable);
+            }
             blueDisabledBool = true;
-            break;
+            return disabledArray;
     }
 };
 
 const retrieveDisabledState = (buttonId) => {
-    let returnedArray = [];
+    let returnArray = [];
+
     switch (buttonId) {
         case 'red':
-            returnedArray = saveStateRedRow.slice();
+            for (let i = 0; i < 13; i++){
+                const popForDisable = saveStateRedRow.pop();
+                returnArray.push(popForDisable);
+            }
             redDisabledBool = false;
-            break;
+            return returnArray;
         case 'yellow':
             returnedArray = saveStateYellowRow.slice();
             yellowDisabledBool = false;
@@ -89,23 +131,29 @@ export const disableClick = () => {
     switch (buttonId){
         case 'red':
             if (!redDisabledBool){
-                console.log(saveStateRedRow);
-                saveStateRedRow = redArray.slice();
-                console.log(saveStateRedRow);
-                redDisabledBool = true;
-                // saveDisabledState(buttonId, redArray);
+                let catchArray = saveDisabledState(buttonId, redArray);
+                for (let i = 0; i < 13; i++){
+                    const popForDisable = catchArray.pop();
+                    redArray.push(popForDisable);
+                }
                 disableRow(redArray);
-                console.log(saveStateRedRow);
             } else {
-                const returnedArray = retrieveDisabledState(buttonId);
+                let catchArray = retrieveDisabledState(buttonId);
                 redArray.splice(0, 13);
-                redArray = redArray.concat(returnedArray);
+                for (let i = 0; i < 13; i++){
+                    const shiftForDisable = catchArray.shift();
+                    redArray.push(shiftForDisable);
+                }
             }
             redArray[12].children[0].removeAttribute('disabled', true);
             break;
         case 'yellow':
             if (!yellowDisabledBool){
-                saveDisabledState(buttonId, yellowArray);
+                let catchArray = saveDisabledState(buttonId, yellowArray);
+                for (let i = 0; i < 13; i++){
+                    const popForDisable = catchArray.pop();
+                    yellowArray.push(popForDisable);
+                }
                 disableRow(yellowArray);
             } else {
                 yellowArray = retrieveDisabledState(buttonId);
@@ -113,7 +161,11 @@ export const disableClick = () => {
             break;
         case 'green':
             if (!greenDisabledBool){
-                saveDisabledState(buttonId, greenArray);
+                let catchArray = saveDisabledState(buttonId, greenArray);
+                for (let i = 0; i < 13; i++){
+                    const popForDisable = catchArray.pop();
+                    greenArray.push(popForDisable);
+                }
                 disableRow(greenArray);
             } else {
                 greenArray = retrieveDisabledState(buttonId);
@@ -121,14 +173,17 @@ export const disableClick = () => {
             break;
         case 'blue':
             if (!blueDisabledBool){
-                saveDisabledState(buttonId, blueArray);
+                let catchArray = saveDisabledState(buttonId, blueArray);
+                for (let i = 0; i < 13; i++){
+                    const popForDisable = catchArray.pop();
+                    blueArray.push(popForDisable);
+                }
                 disableRow(blueArray);
             } else {
                 blueArray = retrieveDisabledState(buttonId);
             }
             break;
     }
-    console.log(saveStateRedRow);
 };
 
 allRows.forEach(row => {
