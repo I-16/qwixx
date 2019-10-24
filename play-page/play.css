@@ -7,37 +7,33 @@ body {
     box-sizing: border-box;
 }
 
-input.red,
-.die:nth-of-type(3) {
-    background: hsl(349, 76%, 50%);
-    ;
-}
-
-input.yellow,
-.die:nth-of-type(4) {
-    background: hsl(42, 96%, 62%);
-}
-
-input.green,
-.die:nth-of-type(5) {
-    background: hsl(114, 47%, 45%);
-}
-
-input.blue,
-.die:nth-of-type(6) {
-    background: hsl(211, 65%, 40%);
-}
-
-.die {
-    font-size: 6rem;
-}
-
-#dice-display {
-    font-size: 5rem;
-}
-
 input[type=checkbox] {
     display: none;
+}
+
+input[value="Roll"],
+#confirm-button,
+#end-game-button {
+    height: 40px;
+    padding: 0 1rem;
+}
+
+input[value="Roll"] {
+    background-color: hsl(115, 44%, 35%);
+    color: white;
+}
+
+input[value="Roll"]:disabled {
+    background-color: darkgray;
+    color: gray;
+}
+
+#confirm-button {
+    background-color: yellow;
+}
+
+#end-game-button {
+    background-color: red;
 }
 
 /* Styles for disabled input boxes */
@@ -223,5 +219,9 @@ input[type=checkbox]:checked+span:after {
 
 #dice-and-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+#dice-display {
+    width: 236px;
 }
