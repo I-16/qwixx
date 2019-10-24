@@ -1,6 +1,7 @@
 import { makeUser, saveUser } from '../common/utils.js';
 
 const userSignUp = document.getElementById('user-sign-up');
+const clearStorage = document.getElementById('clear-storage');
 
 userSignUp.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -14,3 +15,10 @@ userSignUp.addEventListener('submit', function(event) {
     window.location = 'play-page';
 
 });
+
+clearStorage.addEventListener('click', function() {
+    localStorage.clear();
+});
+
+
+    
