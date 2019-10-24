@@ -1,87 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="play.css">
-    <title>Quixx!</title>
-</head>
-<body>
-	<main>
-    <div id="game-board">
-        <div id="red-row">
 
-        </div>
-        <div id="yellow-row">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="play.css">
+		<title>Quixx!</title>
+	</head>
 
-        </div>
-        <div id="green-row">
+	<body>
+		<main>
+			<div id="game-board">
+				<div id="red-row">
 
-        </div>
-        <div id="blue-row">
+				</div>
+				<div id="yellow-row">
 
-        </div>
-    </div>
-    <div id="score-display">
-        <div id="score-boxes">
-            <span id="red-score" class="score-span"></span>
-            <span>+</span>
-            <span id="yellow-score" class="score-span"></span>
-            <span>+</span>
-            <span id="green-score" class="score-span"></span>
-            <span>+</span>
-            <span id="blue-score" class="score-span"></span>
-            <span>-</span>
-            <span id="penalty-score" class="penalty-span"></span>
-            <span>=</span>
-            <span id="session-score-span"></span>
-        </div>
-        <div id="penalty-boxes">
-            <span id="penalty-description">Penalty boxes: -5 points each</span>
-            <label id="penalty1">
-                <input type="checkbox" class="penalty">
-                <span class="penalty-checkbox-span"></span>
-            </label>
-            <label id="penalty2">
-                <input type="checkbox" class="penalty">
-                <span class="penalty-checkbox-span"></span>
-            </label>
-            <label id="penalty3">
-                <input type="checkbox" class="penalty">
-                <span class="penalty-checkbox-span"></span>
-            </label>
-            <label id="penalty4">
-                <input type="checkbox" class="penalty">
-                <span class="penalty-checkbox-span"></span>
-            </label>
-        </div>
-    </div>
-    <div id="dice-and-buttons">
-    <div id="dice-display">
-        <span id="common-die-1">&#x2680</span>
-        <span id="common-die-2">&#x2681</span>
-        <span id="red-die">&#x2682</span>
-        <span id="yellow-die">&#x2683</span>
-        <span id="green-die">&#x2684</span>
-        <span id="blue-die">&#x2685</span>
-    </div>
-    <div id="buttons">
-        <input type="button" value="Roll">
-        <button id="confirm-button">Confirm</button>
-        <button id="end-game-button">End Game</button>
-        <span id="user-name"></span>
-	</div>
-</main>
-    <div id="mock-up">
-        <img src="../assets/wireframes/Quixx-mobile-MVP.png" />
-    </div>
+				</div>
+				<div id="green-row">
+
+				</div>
+				<div id="blue-row">
+
+				</div>
+			</div>
+			<div id="score-display">
+				<div id="score-boxes">
+					<span id="red-score" class="score-span"></span>
+					<span>+</span>
+					<span id="yellow-score" class="score-span"></span>
+					<span>+</span>
+					<span id="green-score" class="score-span"></span>
+					<span>+</span>
+					<span id="blue-score" class="score-span"></span>
+					<span>-</span>
+					<span id="penalty-score" class="penalty-span"></span>
+					<span>=</span>
+					<span id="session-score-span" title="Your total score as of your last confirmed play."></span>
+				</div>
+				<div id="penalty-boxes"
+					title="When you can't or don't want to tick a box after your roll, tick a penalty box.">
+					<span id="penalty-description">Penalty boxes: -5 points each</span>
+					<label id="penalty1">
+						<input type="checkbox" class="penalty">
+						<span class="penalty-checkbox-span"></span>
+					</label>
+					<label id="penalty2">
+						<input type="checkbox" class="penalty">
+						<span class="penalty-checkbox-span"></span>
+					</label>
+					<label id="penalty3">
+						<input type="checkbox" class="penalty">
+						<span class="penalty-checkbox-span"></span>
+					</label>
+					<label id="penalty4">
+						<input type="checkbox" class="penalty">
+						<span class="penalty-checkbox-span"></span>
+					</label>
+				</div>
+			</div>
+			<div id="dice-and-buttons">
+				<div id="dice-display">
+					<span id="common-die-1">&#x2680</span>
+					<span id="common-die-2">&#x2681</span>
+					<span id="red-die">&#x2682</span>
+					<span id="yellow-die">&#x2683</span>
+					<span id="green-die">&#x2684</span>
+					<span id="blue-die">&#x2685</span>
+				</div>
+				<div id="buttons">
+					<input type="button" title="When you start a new turn, roll the dice." value="Roll">
+					<button id="confirm-button"
+						title="After you've rolled and ticked one or two boxes, and when you use a common roll on someone else's turn, click to finalize your play.">Confirm</button>
+					<button id="end-game-button"
+						title="When either you or someone else has won the game, click here. This will end the current game and check your score against the top score.">End
+						Game</button>
+					<span id="user-name"></span>
+				</div>
+		</main>
+		<div id="mock-up">
+			<img src="../assets/wireframes/Quixx-mobile-MVP.png" />
+		</div>
 
 
-	</main>
-    <script type="module" src="play.js"></script>
+		</main>
+		<script type="module" src="play.js"></script>
 
-    <script src="https://kit.fontawesome.com/129e63f532.js" crossorigin="anonymous"></script>
-    <script type="module" src="dice-roll.js"></script>
-</body>
+		<script src="https://kit.fontawesome.com/129e63f532.js" crossorigin="anonymous"></script>
+		<script type="module" src="dice-roll.js"></script>
+	</body>
+
 </html>
