@@ -27,7 +27,7 @@ let redDisabledBool = false;
 let yellowDisabledBool = false;
 let greenDisabledBool = false;
 let blueDisabledBool = false;
-
+const cloneMe = document.getElementById('clone-me');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 
 function createNewObjects(objectArray) {
@@ -56,18 +56,28 @@ const saveDisabledState = (buttonId, rowArray) => {
 
     switch (buttonId) {
         case 'red':
+<<<<<<< HEAD
             swapArray = immutableArray.slice();
             for (let i = 0; i < 13; i++){
                 const popForDisable = immutableArray.pop();
                 disabledArray.push(popForDisable);
             }
+=======
+>>>>>>> 1b889f4020e94ae0ab7dbdd5ed3452d9d2e1c452
             for (let i = 0; i < 13; i++){
-                const popForDisable = swapArray.pop();
-                saveStateRedRow.push(popForDisable);
+                const clonedNode = rowArray[i].cloneNode(true);
+                cloneMe.appendChild(clonedNode);
             }
+            console.log(cloneMe);
+            disableRow(cloneMe);
+            redRow.style.display = 'none';
             redDisabledBool = true;
+<<<<<<< HEAD
             return disabledArray.slice();
 
+=======
+            break;
+>>>>>>> 1b889f4020e94ae0ab7dbdd5ed3452d9d2e1c452
         case 'yellow':
             swapArray = rowArray.slice();
             for (let i = 0; i < 13; i++){
@@ -110,16 +120,21 @@ const saveDisabledState = (buttonId, rowArray) => {
 };
 
 const retrieveDisabledState = (buttonId) => {
-    let returnArray = [];
-
+    let node;
     switch (buttonId) {
         case 'red':
-            for (let i = 0; i < 13; i++){
-                const popForDisable = saveStateRedRow.pop();
-                returnArray.push(popForDisable);
+            while (redRow.firstChild){
+                redRow.removeChild(redRow.firstChild);
             }
+
+            for (let i = 0; i < 13; i++){
+                node = cloneMe.firstChild.nextSibling;
+                redRow.appendChild(node);
+            }
+
             redDisabledBool = false;
-            return returnArray;
+            // debugger;
+            break;
         case 'yellow':
             returnArray = saveStateYellowRow.slice();
             yellowDisabledBool = false;
@@ -133,7 +148,11 @@ const retrieveDisabledState = (buttonId) => {
             blueDisabledBool = false;
             break;
     }
+<<<<<<< HEAD
     return returnArray;
+=======
+    // return returnedArray;
+>>>>>>> 1b889f4020e94ae0ab7dbdd5ed3452d9d2e1c452
 };
 
 export const disableClick = () => {
@@ -151,6 +170,7 @@ export const disableClick = () => {
     switch (buttonId){
         case 'red':
             if (!redDisabledBool){
+<<<<<<< HEAD
                 let catchArray = [];
                 //let test = [];
 
@@ -180,6 +200,17 @@ export const disableClick = () => {
                  //   const shiftForDisable = catchArray.shift();
                  //   redArray.push(shiftForDisable);
                 //}
+=======
+                saveDisabledState(buttonId, redArray);
+                console.log(cloneMe);
+                console.log(redRow);
+                debugger;
+                
+                disableRow(redArray);
+            } else {
+                retrieveDisabledState(buttonId);
+                
+>>>>>>> 1b889f4020e94ae0ab7dbdd5ed3452d9d2e1c452
             }
             redArray[12].children[0].removeAttribute('disabled', true);
             break;
