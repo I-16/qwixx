@@ -33,22 +33,102 @@ const allRows = [redRow, yellowRow, greenRow, blueRow];
 const saveDisabledState = (buttonId, rowArray) => {
     switch (buttonId) {
         case 'red':
-            saveStateRedRow = rowArray.slice;
+            saveStateRedRow = rowArray.slice();
+            redDisabledBool = true;
             break;
         case 'yellow':
-            saveStateYellowRow = rowArray.slice;
+            saveStateYellowRow = rowArray.slice();
+            yellowDisabledBool = true;
             break;
         case 'green':
-            saveStateGreenRow = rowArray.slice;
+            saveStateGreenRow = rowArray.slice();
+            greenDisabledBool = true;
             break;
         case 'blue':
-            saveStateBlueRow = rowArray.slice;
+            saveStateBlueRow = rowArray.slice();
+            blueDisabledBool = true;
             break;
     }
 };
 
+const retrieveDisabledState = (buttonId) => {
+    let returnedArray = [];
+    switch (buttonId) {
+        case 'red':
+            returnedArray = saveStateRedRow.slice();
+            redDisabledBool = false;
+            break;
+        case 'yellow':
+            returnedArray = saveStateYellowRow.slice();
+            yellowDisabledBool = false;
+            break;
+        case 'green':
+            returnedArray = saveStateGreenRow.slice();
+            greenDisabledBool = false;
+            break;
+        case 'blue':
+            returnedArray = saveStateBlueRow.slice();
+            blueDisabledBool = false;
+            break;
+    }
+    return returnedArray;
+};
+
 export const disableClick = () => {
-    
+    let redDomArray = document.querySelectorAll('#red-row label');
+    let yellowDomArray = document.querySelectorAll('#yellow-row label');
+    let greenDomArray = document.querySelectorAll('#green-row label');
+    let blueDomArray = document.querySelectorAll('#blue-row label');
+    let redArray = scrapeArray(redDomArray);
+    let yellowArray = scrapeArray(yellowDomArray);
+    let greenArray = scrapeArray(greenDomArray);
+    let blueArray = scrapeArray(blueDomArray);
+
+    let buttonId = event.target.id;
+
+    switch (buttonId){
+        case 'red':
+            if (!redDisabledBool){
+                console.log(saveStateRedRow);
+                saveStateRedRow = redArray.slice();
+                console.log(saveStateRedRow);
+                redDisabledBool = true;
+                // saveDisabledState(buttonId, redArray);
+                disableRow(redArray);
+                console.log(saveStateRedRow);
+            } else {
+                const returnedArray = retrieveDisabledState(buttonId);
+                redArray.splice(0, 13);
+                redArray = redArray.concat(returnedArray);
+            }
+            redArray[12].children[0].removeAttribute('disabled', true);
+            break;
+        case 'yellow':
+            if (!yellowDisabledBool){
+                saveDisabledState(buttonId, yellowArray);
+                disableRow(yellowArray);
+            } else {
+                yellowArray = retrieveDisabledState(buttonId);
+            }
+            break;
+        case 'green':
+            if (!greenDisabledBool){
+                saveDisabledState(buttonId, greenArray);
+                disableRow(greenArray);
+            } else {
+                greenArray = retrieveDisabledState(buttonId);
+            }
+            break;
+        case 'blue':
+            if (!blueDisabledBool){
+                saveDisabledState(buttonId, blueArray);
+                disableRow(blueArray);
+            } else {
+                blueArray = retrieveDisabledState(buttonId);
+            }
+            break;
+    }
+    console.log(saveStateRedRow);
 };
 
 allRows.forEach(row => {
