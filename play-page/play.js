@@ -23,7 +23,7 @@ let currentSessionScore = 0;
 const endGameButton = document.getElementById('end-game-button');
 const diceButton = document.querySelector('input[type=button]');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
-let disabledCounter = 0;
+let disabledCounter = [];
 let currentUser = {};
 currentUser = getUser();
 
@@ -31,13 +31,15 @@ allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
     const disableLabel = document.createElement('label');
     const disableButton = document.createElement('button');
+    disableButton.classList.add('disable-button');
+    disableButton.id = (row.id + '-disable-button');
     disableButton.addEventListener('click', () => {
         const disableConf = confirm('Are you sure you want to disable this row?');
         if (disableConf){
             for (let i = 0; i < 13; i++){
                 event.target.parentElement.parentElement.children[i].children[0].setAttribute('disabled', true);
             }
-            disabledCounter++;
+            disabledCounter.push(event.target.id);
         }
     });
     disableLabel.appendChild(disableButton);
@@ -86,6 +88,7 @@ const confirmClick = () => {
             if (array[10].children[0].checked === true) {
                 array[11].children[0].checked = true;
                 disableRow(array);
+                disabledCounter.push(array[0].children[0].className);
             }
         }
 
@@ -102,7 +105,7 @@ const confirmClick = () => {
     diceButton.disabled = false;
     
     
-    if (countArray[4] === 4 || disabledCounter > 1) {
+    if (countArray[4] === 4 || disabledCounter.length > 1) {
         allColorArrays.forEach(array => {
             disableRow(array);
         });
