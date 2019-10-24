@@ -8,11 +8,13 @@ body {
 h1 {
     font-family: 'Bowlby One SC', cursive;
     font-size: 4.5rem;
+    margin: 0;
 }
 
 h2 {
     font-family: 'Kelly Slab', cursive;
     font-size: 2.4rem;
+    line-height: 1rem;
 }
 
 header {
