@@ -101,7 +101,7 @@ p {
     position: relative;
     padding: 1em 1.5em;
     margin: 5rem;
-    color: hsl(42, 100%, 91%);
+    color: hsl(42, 100%, 20%);
     background: hsl(114, 47%, 80%);
     overflow: hidden;
   }
