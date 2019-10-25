@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Kelly+Slab|Pompiere&display=swap');
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: center;
+	flex-wrap: wrap;
+	align-content: center;
+	font-family: 'Open Sans',
+    sans-serif;
+    background-color: hsl(42, 100%, 91%);
+    
+}
+
+#q {
+    color: #e01f42;
+}
+
+#w {
+    color: #fbc341;
+}
+
+#i {
+    color: #398132;
+}
+
+#x1 {
+    color: #2464a8;
+}
+
+#x2 {
+    color: #e01f42;
+}
+
+#bang1 {
+    color: #fbc341;
+}
+
+#bang2 {
+    color: #398132;
+}
+
+#bang3 {
+    color: #2464a8;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Kelly Slab', cursive;
+    font-size: 2.4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-family: 'Kelly Slab', cursive; 
+    font-size: 2rem;
+    background-color: #e02043;
+    color: whitesmoke;
+    padding: 10px;
+}
+
+main {
+    margin: 0 4rem;
+}
+
+a {
+    background-color: darkblue;
+    color: whitesmoke;
+    font-size: 20px;
+    text-shadow: 1px black;
+    padding: 10px;
+    box-shadow: 5px 5px 3px 0px rgba(50, 50, 50, 0.75);
+    border-radius: 20px;
+}
+
+a:hover {
+    background-color: turquoise;
+}
+
+p {
+    font-family: 'Pompiere', cursive;
+    font-size: 2rem;
+}
+
+.note {
+    position: relative;
+    padding: 1em 1.5em;
+    margin: 5rem;
+    color: hsl(42, 100%, 91%);
+    background: hsl(114, 47%, 45%);
+    overflow: hidden;
+  }
+  
+  .note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: hsl(42, 100%, 91%) hsl(42, 100%, 91%) #658E15 #658E15;
+    background: #658E15;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+    /* Firefox 3.0 damage limitation */
+    display: block; width: 0;
+  }
+  
+  .note.rounded {
+    -moz-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+  }
+  
+  .note.rounded:before {
+    border-width: 8px;
+    border-color: #fff #fff transparent transparent;
+    -moz-border-radius: 0 0 0 5px;
+    border-radius: 0 0 0 5px;
+  }
