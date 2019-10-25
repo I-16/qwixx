@@ -1,12 +1,12 @@
 const diceButton = document.querySelector('input[type=button]');
-diceButton.addEventListener('click', function() { rollDice(); });
+diceButton.addEventListener('click', function() { rollDice();playAudio(); });
 
 const rollDice = function() {
     let i,
         faceValue,
         output = '',
         diceCount = 6;
-    let color = 'w'
+    let color = 'w';
     // Index 0 and 1 are white dice, 2 is red, 3 is yellow, 4 is green and 5 is blue
     let diceRollArray = [];
     for (i = 0; i < diceCount; i++) {
@@ -40,4 +40,9 @@ const rollDice = function() {
     return diceRollArray;
 };
 
-// export default rollDice;
+const playSound = document.getElementById('rollDiceAudio'); 
+
+function playAudio() { 
+    playSound.play(); 
+} 
+
