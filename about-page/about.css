@@ -6,8 +6,14 @@ h1 {
     text-align: center;
 }
 
+.rancho {
+    font-family: 'Rancho', cursive;
+    text-decoration: underline;
+}
+
 .container {
-    width: 80%;
+    margin: 0 auto;
+    width: 55%;
 }
 
 img {
