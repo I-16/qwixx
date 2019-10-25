@@ -1,0 +1,113 @@
+body, main {
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+.rancho {
+    font-family: 'Special Elite', cursive;
+    text-decoration: underline;
+}
+
+.container {
+    margin: 0 auto;
+    width: 45%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: 9fr 0fr 9fr;
+    grid-template-rows: 4fr 0.5fr 4fr 0fr 4fr 0.5fr 4fr;
+    grid-column-gap: 2px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 115%;
+}
+
+.div3 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.div4 {
+    grid-area: 5 / 1 / 6 / 2;
+}
+
+.div5 {
+    grid-area: 6 / 1 / 7 / 2;
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 115%;
+}
+
+.div6 {
+    grid-area: 7 / 1 / 8 / 2;
+}
+
+.div7 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.div8 {
+    grid-area: 2 / 3 / 3 / 4;
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 115%;
+}
+
+.div9 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.div10 {
+    grid-area: 5 / 3 / 6 / 4;
+}
+
+.div11 {
+    grid-area: 6 / 3 / 7 / 4;
+    text-align: center;
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 115%;
+}
+
+.div12 {
+    grid-area: 7 / 3 / 8 / 4;
+}
+
+#hidden-seth {
+   display: none;
+}
+
+#hidden-dan {
+    display: none;
+}
+
+#hidden-ben {
+    display: none;
+}
+
+#hidden-travis {
+    display: none;
+}
+
+.hidden-container {
+    font-family: 'Big Shoulders Text', cursive;
+    font-size: 1.25em;
+}
