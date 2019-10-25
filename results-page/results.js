@@ -29,9 +29,35 @@ if (highScoreUserScore < userScore) {
     // save user score as the new high score
     let newHighScore = makeHighScore(userName, userScore);
     saveHighScore(newHighScore);
-    
+
     // new high score css flag for ben's animations
     newHighScoreFlag = true;
+}
+
+if (newHighScoreFlag === true) {
+    userNameSpan.classList.add('animated');
+    userNameSpan.classList.add('bounceInDown');
+    userNameSpan.classList.add('delay-1s');
+
+    userScoreSpan.classList.add('animated');
+    userScoreSpan.classList.add('bounceInDown');
+    userScoreSpan.classList.add('delay-2s');
+
+    highScoreNameSpan.classList.add('animated');
+    highScoreNameSpan.classList.add('bounceInDown');
+    highScoreNameSpan.classList.add('delay-3s');
+
+    highScoreScoreSpan.classList.add('animated');
+    highScoreScoreSpan.classList.add('bounceInDown');
+    highScoreScoreSpan.classList.add('delay-3s');
+}
+
+const playHighScore = document.getElementById('newHighScore');
+if (newHighScoreFlag === true) {
+    playAudio();
+}
+function playAudio() {
+    playHighScore.play();
 }
 
 // display user score and high score
