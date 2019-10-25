@@ -1,5 +1,7 @@
 body, main {
     margin: 0 auto;
+    background-color: black;
+    color: white;
 }
 
 h1 {
@@ -13,7 +15,7 @@ h1 {
 
 .container {
     margin: 0 auto;
-    width: 55%;
+    width: 53%;
 }
 
 img {
