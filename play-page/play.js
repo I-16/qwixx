@@ -31,6 +31,7 @@ allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
     const disableLabel = document.createElement('label');
     const disableButton = document.createElement('button');
+    disableButton.textContent = 'Disable row';
     disableButton.classList.add('disable-button');
     disableButton.id = (row.id + '-disable-button');
     disableButton.addEventListener('click', () => {
