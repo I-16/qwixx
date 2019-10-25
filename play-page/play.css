@@ -322,3 +322,13 @@ label[id^="penalty"] [type=checkbox]:checked+span:after {
 #blue-row-disable-button {
     background: #c0d8f2;
 }
+
+#rules-link {
+    border: 3px solid #b7b163;
+    border-radius: 50%;
+    background: #fffaef;
+    font-family: 'Bowlby One SC', cursive;
+    padding: 0 10px;
+    text-decoration: none;
+    margin-left: 1px;
+}
