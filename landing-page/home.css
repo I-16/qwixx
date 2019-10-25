@@ -90,12 +90,13 @@ form {
 }
 
 #clear-storage {
-    background: #398132
+    background: #398132;
 }
 
 #clear-storage:hover {
     background: #39813275;
     color: black;
+    cursor: pointer;
 }
 
 input {
