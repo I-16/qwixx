@@ -1,7 +1,6 @@
-import { updateScores } from '../play-page/update-scores.js';
-
 // IMPORT MODULES under test here:
 // import example from '../src/example.js';
+import { updateScores } from '../play-page/update-scores.js';
 
 const test = QUnit.test;
 
@@ -18,7 +17,7 @@ test('takes the counts for each row and returns an array of their scores', funct
     // Call the function you're testing and set the result to a const
     const expected = [1, 3, 6, 10, 10];
 
-    const output = updateScores(redCount, yellowCount, greenCount, blueCount, penaltyCount);
+    const output = updateScores([redCount, yellowCount, greenCount, blueCount, penaltyCount]);
 
     //Assert
     // Make assertions about what is expected valid result
