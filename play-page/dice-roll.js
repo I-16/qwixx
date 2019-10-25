@@ -40,12 +40,9 @@ const rollDice = function() {
     return diceRollArray;
 };
 
-var playSound = document.getElementById('myAudio'); 
+var playSound = document.getElementById('rollDiceAudio'); 
 
 function playAudio() { 
     playSound.play(); 
 } 
 
-function pauseAudio() { 
-    playSound.pause(); 
-} 
