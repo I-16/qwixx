@@ -80,6 +80,23 @@ img {
 .div12 {
     grid-area: 7 / 3 / 8 / 4;
 }
-    
+
+.hidden-seth {
+    display: none;
+}
+
+.hidden-dan {
+    display: none;
+}
+
+.hidden-ben {
+    display: none;
+}
+
+.hidden-travis {
+    display: none;
+}
+
 .square-face {
-  }
+    display: none;
+}
