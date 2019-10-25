@@ -12,6 +12,8 @@ const danHiddenImg = document.getElementById('big-dan');
 const benHiddenImg = document.getElementById('big-ben');
 const travisHiddenImg = document.getElementById('big-travis');
 
+let preventMultipleEvents = false;
+
 function animateCSS(element, animationName, callback) { // from animate css docs
     const node = document.querySelector(element);
     node.classList.add('animated', animationName);
@@ -27,59 +29,95 @@ function animateCSS(element, animationName, callback) { // from animate css docs
 }
 
 const sethReveal = () => {
-    animateCSS('.parent', 'fadeOutDown');
-    setTimeout(function(){ parent.style.display = 'none'; }, 1000);
-    setTimeout(function(){ sethHidden.style.display = 'block'; }, 1100);
-    setTimeout(function(){ animateCSS('#hidden-seth', 'rotateInDownLeft'); }, 1100);
-    setTimeout(function(){ sethHidden.classList.add('animated rotateInDownLeft'); }, 1100);
+    if (!preventMultipleEvents) {
+        animateCSS('.parent', 'fadeOutDown');
+        setTimeout(function(){ parent.style.display = 'none'; }, 1000);
+        setTimeout(function(){ sethHidden.style.display = 'block'; }, 1100);
+        setTimeout(function(){ animateCSS('#hidden-seth', 'rotateInDownLeft'); }, 1100);
+        preventMultipleEvents = true;
+    }
 };
 const sethConceal = () => {
-    alert('bye');
+    animateCSS('#hidden-seth', 'zoomOutLeft');
+    setTimeout(function(){ sethHidden.style.display = 'none'; }, 800);
+    setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
+    setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    preventMultipleEvents = false;
 };
 
 const danReveal = () => {
-    alert('dan');
+    if (!preventMultipleEvents) {
+        animateCSS('.parent', 'fadeOutDown');
+        setTimeout(function(){ parent.style.display = 'none'; }, 1000);
+        setTimeout(function(){ danHidden.style.display = 'block'; }, 1100);
+        setTimeout(function(){ animateCSS('#hidden-dan', 'rotateInUpRight'); }, 1100);
+        preventMultipleEvents = true;
+    }
 };
 const danConceal = () => {
-    alert('bye');
+    animateCSS('#hidden-dan', 'zoomOutLeft');
+    setTimeout(function(){ danHidden.style.display = 'none'; }, 800);
+    setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
+    setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    preventMultipleEvents = false;
 };
 
 const benReveal = () => {
-    alert('ben');
+    if (!preventMultipleEvents) {
+        animateCSS('.parent', 'fadeOutDown');
+        setTimeout(function(){ parent.style.display = 'none'; }, 1000);
+        setTimeout(function(){ benHidden.style.display = 'block'; }, 1100);
+        setTimeout(function(){ animateCSS('#hidden-ben', 'rotateInDownRight'); }, 1100);
+        preventMultipleEvents = true;
+    }
 };
 
 const benConceal = () => {
-    alert('bye');
+    animateCSS('#hidden-ben', 'zoomOutRight');
+    setTimeout(function(){ benHidden.style.display = 'none'; }, 800);
+    setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
+    setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    preventMultipleEvents = false;
 };
 
 const travisReveal = () => {
-    alert('travis');
+    if (!preventMultipleEvents) {
+        animateCSS('.parent', 'fadeOutDown');
+        setTimeout(function(){ parent.style.display = 'none'; }, 1000);
+        setTimeout(function(){ travisHidden.style.display = 'block'; }, 1100);
+        setTimeout(function(){ animateCSS('#hidden-travis', 'rotateInUpLeft'); }, 1100);
+        preventMultipleEvents = true;
+    }
 };
 
 const travisConceal = () => {
-    alert('bye');
+    animateCSS('#hidden-travis', 'zoomOutRight');
+    setTimeout(function(){ travisHidden.style.display = 'none'; }, 800);
+    setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
+    setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    preventMultipleEvents = false;
 };
 
 sethFaces.forEach(function(item){
-    item.addEventListener('mouseover', sethReveal);
+    item.addEventListener('click', sethReveal);
 });
 
 danFaces.forEach(function(item){
-    item.addEventListener('mouseover', danReveal);
+    item.addEventListener('click', danReveal);
 });
 
 benFaces.forEach(function(item){
-    item.addEventListener('mouseover', benReveal);
+    item.addEventListener('click', benReveal);
 });
 
 travisFaces.forEach(function(item){
-    item.addEventListener('mouseover', travisReveal);
+    item.addEventListener('click', travisReveal);
 });
 
-sethHiddenImg.addEventListener('mouseout', sethConceal);
-danHiddenImg.addEventListener('mouseout', danConceal);
-benHiddenImg.addEventListener('mouseout', benConceal);
-travisHiddenImg.addEventListener('mouseout', travisConceal);
+sethHiddenImg.addEventListener('click', sethConceal);
+danHiddenImg.addEventListener('click', danConceal);
+benHiddenImg.addEventListener('click', benConceal);
+travisHiddenImg.addEventListener('click', travisConceal);
 
 /*
 on conceal - parent.setAttribute(visibility none)
