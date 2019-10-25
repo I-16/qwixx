@@ -89,10 +89,11 @@ const confirmClick = () => {
             if (array[10].children[0].checked === true) {
                 array[11].children[0].checked = true;
                 disableRow(array);
-                disabledCounter.push(array[0].children[0].className);
+                if (!disabledCounter.includes(array[0].children[0].className)){
+                    disabledCounter.push(array[0].children[0].className);
+                }
             }
         }
-
         countArray.push(arrayChecks);
     });
 
