@@ -169,10 +169,6 @@ input[type=checkbox]:disabled~.blue-box {
     top: 1.5px;
 }
 
-input[type=checkbox]:checked+span {
-    /* text-decoration: line-through; */
-}
-
 input[type=checkbox]:checked+span:after {
     position: relative;
     top: 2px;
@@ -188,6 +184,20 @@ input[type=checkbox]:checked+span:after {
     text-align: center;
 }
 
+/* Fixes the alignment and position of the penalty box ticks */
+label[id^="penalty"] [type=checkbox]:checked+span:after {
+    position: relative;
+    top: 0;
+    bottom: 0;
+	left: 0;
+	right: 0;
+    margin:0;
+    content: "\274c";
+    font-size: 25px;
+    color: #FFF;
+    line-height: 30px;
+    text-align: center;
+}
 
 #score-display {
     display: flex;
