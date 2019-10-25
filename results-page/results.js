@@ -34,7 +34,7 @@ if (highScoreUserScore < userScore) {
     newHighScoreFlag = true;
 }
 
-if (newHighScoreFlag = true) {
+if (newHighScoreFlag === true) {
     userNameSpan.classList.add('animated');
     userNameSpan.classList.add('bounceInDown');
     userNameSpan.classList.add('delay-1s');
@@ -51,6 +51,7 @@ if (newHighScoreFlag = true) {
     highScoreScoreSpan.classList.add('bounceInDown');
     highScoreScoreSpan.classList.add('delay-3s');
 }
+
 // display user score and high score
 userNameSpan.textContent += userName;
 userScoreSpan.textContent += userScore;
