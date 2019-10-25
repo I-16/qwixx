@@ -84,7 +84,7 @@ img {
 }
 
 #hidden-seth {
-    display: none;
+   display: none;
 }
 
 #hidden-dan {
@@ -96,9 +96,5 @@ img {
 }
 
 #hidden-travis {
-    display: none;
-}
-
-.square-face {
     display: none;
 }

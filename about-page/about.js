@@ -1,4 +1,4 @@
-const container = document.getElementById('container');
+const parent = document.getElementById('parent');
 const sethFaces = document.querySelectorAll('.seth-face');
 const danFaces = document.querySelectorAll('.dan-face');
 const benFaces = document.querySelectorAll('.ben-face');
@@ -27,10 +27,11 @@ function animateCSS(element, animationName, callback) { // from animate css docs
 }
 
 const sethReveal = () => {
-    animateCSS('.parent', 'fadeoutdown', function() {
-        container.setAttribute('display', 'none');
-        sethHidden.removeAttribute('display', 'none');
-    });
+    animateCSS('.parent', 'fadeOutDown');
+    setTimeout(function(){ parent.style.display = 'none'; }, 1000);
+    setTimeout(function(){ sethHidden.style.display = 'block'; }, 1100);
+    setTimeout(function(){ animateCSS('#hidden-seth', 'rotateInDownLeft'); }, 1100);
+    setTimeout(function(){ sethHidden.classList.add('animated rotateInDownLeft'); }, 1100);
 };
 const sethConceal = () => {
     alert('bye');
