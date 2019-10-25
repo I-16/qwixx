@@ -52,6 +52,14 @@ if (newHighScoreFlag === true) {
     highScoreScoreSpan.classList.add('delay-3s');
 }
 
+const playHighScore = document.getElementById('newHighScore');
+if (newHighScoreFlag === true) {
+    playAudio();
+}
+function playAudio() {
+    playHighScore.play();
+}
+
 // display user score and high score
 userNameSpan.textContent += userName;
 userScoreSpan.textContent += userScore;
