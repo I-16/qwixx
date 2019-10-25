@@ -42,6 +42,7 @@ const sethConceal = () => {
     setTimeout(function(){ sethHidden.style.display = 'none'; }, 800);
     setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
     setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    setTimeout(function(){ sethHidden.classList.remove('animated', 'zoomOutLeft'); }, 1000);
     preventMultipleEvents = false;
 };
 
@@ -59,6 +60,7 @@ const danConceal = () => {
     setTimeout(function(){ danHidden.style.display = 'none'; }, 800);
     setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
     setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    setTimeout(function(){ danHidden.classList.remove('animated', 'zoomOutLeft'); }, 1000);
     preventMultipleEvents = false;
 };
 
@@ -77,6 +79,7 @@ const benConceal = () => {
     setTimeout(function(){ benHidden.style.display = 'none'; }, 800);
     setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
     setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    setTimeout(function(){ benHidden.classList.remove('animated', 'zoomOutRight'); }, 1000);
     preventMultipleEvents = false;
 };
 
@@ -95,6 +98,7 @@ const travisConceal = () => {
     setTimeout(function(){ travisHidden.style.display = 'none'; }, 800);
     setTimeout(function(){ parent.style.display = 'grid'; }, 1000);
     setTimeout(function(){ animateCSS('.parent', 'zoomIn'); }, 1000);
+    setTimeout(function(){ travisHidden.classList.remove('animated', 'zoomOutRight'); }, 1000);
     preventMultipleEvents = false;
 };
 
@@ -118,10 +122,3 @@ sethHiddenImg.addEventListener('click', sethConceal);
 danHiddenImg.addEventListener('click', danConceal);
 benHiddenImg.addEventListener('click', benConceal);
 travisHiddenImg.addEventListener('click', travisConceal);
-
-/*
-on conceal - parent.setAttribute(visibility none)
-remove attribute from 
-
-
-*/
