@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Kelly+Slab|Pompiere&display=swap');
 
+p {
+    font-family: 'Pompiere', cursive;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
 body {
-    background-color: hsl(42, 100%, 91%);  
+    background-color: hsl(42, 100%, 91%);
 }
 
 header {
@@ -55,6 +61,7 @@ h2 {
     margin-bottom: 2rem;
     color: black;
 }
+
 main {
     margin: 0 auto;
     border: solid hsl(349, 76%, 50%);
@@ -63,11 +70,9 @@ main {
     background: #b9e4b4;
     border-radius: 10px;
 }
-p {
-    font-family: 'Pompiere', cursive;
-    font-size: 2rem;
-    margin: 1rem;
-}
+
+
+
 a {
     background-color: hsl(211, 65%, 40%);
     color: whitesmoke;
@@ -76,6 +81,7 @@ a {
     padding: .7rem;
     box-shadow: 5px 5px 3px 0px rgba(50, 50, 50, 0.75);
     border-radius: 20px;
+    text-decoration: none;
 }
 
 a:hover {
