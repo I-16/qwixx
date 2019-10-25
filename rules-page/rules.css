@@ -13,6 +13,38 @@ body {
     
 }
 
+#q {
+    color: #e01f42;
+}
+
+#w {
+    color: #fbc341;
+}
+
+#i {
+    color: #398132;
+}
+
+#x1 {
+    color: #2464a8;
+}
+
+#x2 {
+    color: #e01f42;
+}
+
+#bang1 {
+    color: #fbc341;
+}
+
+#bang2 {
+    color: #398132;
+}
+
+#bang3 {
+    color: #2464a8;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -22,7 +54,7 @@ header {
 
 h1 {
     font-family: 'Bowlby One SC', cursive;
-    font-size: 4.5rem;
+    font-size: 6rem;
     margin-top: 0;
     margin-bottom: 0;
 }
