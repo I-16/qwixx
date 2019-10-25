@@ -12,12 +12,3 @@ test('scoreChecked ', function(assert) {
 
     assert.equal(testOutput, expected);
 });
-
-// Testing in .js file
-// import { generateRow } from '../play-page/row-gen.js';
-
-// const testRowRed = generateRow('red', 3);
-// debugger;
-
-// const testRowGreen = generateRow('green', 1);
-// debugger;
