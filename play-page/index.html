@@ -11,7 +11,7 @@
 
 	<body>
         <header>
-            <h1><span id='q'>Q</span><span id='w'>W</span><span id='i'>I</span><span id='x1'>X</span><span id='x2'>X</span><span id='bang1'>!</span><span id='bang2'>!</span><span id='bang3'>!</span></h1>
+            <h1><span class='q'>Q</span><span class='w'>W</span><span class='i'>I</span><span class='x1'>X</span><span class='x2'>X</span><span class='bang1'>!</span><span class='bang2'>!</span><span class='bang3'>!</span></h1>
         </header>
 		<main>
 			<div id="game-board">
@@ -81,7 +81,16 @@
                     <a href="../rules-page/index.html" target='_blank' id="rules-link" title="Bring up the rules">?</a>
 					<span id="user-name"></span>
 				</div>
-		</main>
+        </main>
+        <section class="modal">
+            <div class="modal-content">
+                <h1><span class='q'>Q</span><span class='w'>W</span><span class='i'>I</span><span class='x1'>X</span><span class='x2'>X</span><span class='bang1'>!</span><span class='bang2'>!</span><span class='bang3'>!</span></h1>
+                <h2>Are you sure you want to disable this row? Once disabled, it cannot be brought back! Be sure that another player has crossed out this row by getting the final number.</h2>
+                <div class="modal-buttons">
+                    <button class="modal-confirm">Yes, disable the row!</button><button class="modal-cancel">Oops! No, don't disable!</button>
+                </div>
+            </div>
+        </section>
 
 		<script type="module" src="play.js"></script>
 

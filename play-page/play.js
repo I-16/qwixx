@@ -7,7 +7,9 @@ import { calculateSessionScore } from './calc-session-score.js';
 import { disableRow } from './disable-row.js';
 import { endGame } from './end-game.js';
 
-
+const modal = document.querySelector('.modal');
+const modalConfirm = document.querySelector('.modal-confirm');
+const modalCancel = document.querySelector('.modal-cancel');
 const redRow = document.getElementById('red-row');
 const yellowRow = document.getElementById('yellow-row');
 const greenRow = document.getElementById('green-row');
@@ -25,7 +27,13 @@ const diceButton = document.querySelector('input[type=button]');
 const allRows = [redRow, yellowRow, greenRow, blueRow];
 let disabledCounter = [];
 let currentUser = {};
+let modalFlag;
 currentUser = getUser();
+
+const toggleModal = () => {
+    modalFlag = event.target;
+    modal.classList.toggle('show-modal');
+};
 
 allRows.forEach(row => {
     const newRow = generateAllRows(row.id);
@@ -34,15 +42,7 @@ allRows.forEach(row => {
     disableButton.textContent = 'Disable row';
     disableButton.classList.add('disable-button');
     disableButton.id = (row.id + '-disable-button');
-    disableButton.addEventListener('click', () => {
-        const disableConf = confirm('Are you sure you want to disable this row?');
-        if (disableConf){
-            for (let i = 0; i < 13; i++){
-                event.target.parentElement.parentElement.children[i].children[0].setAttribute('disabled', true);
-            }
-            disabledCounter.push(event.target.id);
-        }
-    });
+    disableButton.addEventListener('click', toggleModal);
     disableLabel.appendChild(disableButton);
     newRow.push(disableLabel);
     newRow.forEach(box => {
@@ -116,6 +116,15 @@ const confirmClick = () => {
 const endGameClick = () => {
     endGame(currentUser.name, currentSessionScore);
 };
+
+modalConfirm.addEventListener('click', () => {
+    for (let i = 0; i < 13; i++){
+        modalFlag.parentElement.parentElement.children[i].children[0].setAttribute('disabled', true);
+    }
+    disabledCounter.push(modalFlag.id);
+    toggleModal();
+});
+modalCancel.addEventListener('click', toggleModal);
 
 confirmButton.addEventListener('click', confirmClick);
 endGameButton.addEventListener('click', endGameClick);
