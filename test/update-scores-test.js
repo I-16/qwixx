@@ -1,25 +1,14 @@
-// IMPORT MODULES under test here:
-// import example from '../src/example.js';
-import { updateScores } from '../play-page/update-scores.js';
+import { scoreColor, scorePenalties } from '../common/utils.js';
 
-const test = QUnit.test;
+export const updateScores = ([redCount, yellowCount, greenCount, blueCount, penaltyCount]) => {
+    // declare individual scores
+    const firstScore = scoreColor(redCount);
+    const secondScore = scoreColor(yellowCount);
+    const thirdScore = scoreColor(greenCount);
+    const fourthScore = scoreColor(blueCount);
+    const penaltyScore = scorePenalties(penaltyCount); 
 
-test('takes the counts for each row and returns an array of their scores', function(assert) {
-    //Arrange
-    // Set up your parameters and expectations
-    const redCount = 1;
-    const yellowCount = 2;
-    const greenCount = 3;
-    const blueCount = 4;
-    const penaltyCount = 2;
-
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const expected = [1, 3, 6, 10, 10];
-
-    const output = updateScores(redCount, yellowCount, greenCount, blueCount, penaltyCount);
-
-    //Assert
-    // Make assertions about what is expected valid result
-    assert.deepEqual(output, expected);
-});
+    // push to array and return
+    let scoreArray = [firstScore, secondScore, thirdScore, fourthScore, penaltyScore];
+    return scoreArray;
+};
