@@ -102,7 +102,7 @@ p {
     padding: 1em 1.5em;
     margin: 5rem;
     color: hsl(42, 100%, 91%);
-    background: hsl(114, 47%, 45%);
+    background: hsl(114, 47%, 80%);
     overflow: hidden;
   }
   
@@ -133,3 +133,12 @@ p {
     -moz-border-radius: 0 0 0 5px;
     border-radius: 0 0 0 5px;
   }
+  h3.qwixx-rules {
+    background-color: hsl(42, 96%, 62%);   
+  }
+  h3.lockin-rules {
+   background-color: hsl(114, 47%, 45%);
+  }
+  h3.ending-game {
+    background-color: hsl(211, 65%, 40%);
+   }
