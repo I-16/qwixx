@@ -1,3 +1,4 @@
+const container = document.getElementById('container');
 const sethFaces = document.querySelectorAll('.seth-face');
 const danFaces = document.querySelectorAll('.dan-face');
 const benFaces = document.querySelectorAll('.ben-face');
@@ -11,8 +12,25 @@ const danHiddenImg = document.getElementById('big-dan');
 const benHiddenImg = document.getElementById('big-ben');
 const travisHiddenImg = document.getElementById('big-travis');
 
+function animateCSS(element, animationName, callback) { // from animate css docs
+    const node = document.querySelector(element);
+    node.classList.add('animated', animationName);
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName);
+        node.removeEventListener('animationend', handleAnimationEnd);
+
+        if (typeof callback === 'function') callback();
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd);
+}
+
 const sethReveal = () => {
-    alert('seth');
+    animateCSS('.parent', 'fadeoutdown', function() {
+        container.setAttribute('display', 'none');
+        sethHidden.removeAttribute('display', 'none');
+    });
 };
 const sethConceal = () => {
     alert('bye');

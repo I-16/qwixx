@@ -81,19 +81,19 @@ img {
     grid-area: 7 / 3 / 8 / 4;
 }
 
-.hidden-seth {
+#hidden-seth {
     display: none;
 }
 
-.hidden-dan {
+#hidden-dan {
     display: none;
 }
 
-.hidden-ben {
+#hidden-ben {
     display: none;
 }
 
-.hidden-travis {
+#hidden-travis {
     display: none;
 }
 
