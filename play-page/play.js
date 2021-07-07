@@ -83,14 +83,15 @@ const confirmClick = () => {
         const arrayChecks = countChecks(array);
 
         if (array.length > 4) {
+            // these hard coded numbers are a bit hard to follow. it might be nice to store them in constants like const ARRAY_CHECKS_LIMIT = 5, const SECOND_TO_LAST_INDEX = 10, etc
             if (arrayChecks >= 5) {
-                array[10].children[0].removeAttribute('disabled', true);
+                array[10].firstElementChild.removeAttribute('disabled', true);
             }
-            if (array[10].children[0].checked === true) {
-                array[11].children[0].checked = true;
+            if (array[10].firstElementChild.checked === true) {
+                array[11].firstElementChild.checked = true;
                 disableRow(array);
-                if (!disabledCounter.includes(array[0].children[0].className)){
-                    disabledCounter.push(array[0].children[0].className);
+                if (!disabledCounter.includes(array[0].firstElementChild.className)) {
+                    disabledCounter.push(array[0].firstElementChild.className);
                 }
             }
         }
@@ -98,15 +99,15 @@ const confirmClick = () => {
     });
 
     const scoreArray = updateScores(countArray);
-    
+
     const sessionScore = calculateSessionScore(scoreArray);
     currentSessionScore = sessionScore;
-    
+
 
     updateScoresDisplay(scoreArray, sessionScore);
     diceButton.disabled = false;
-    
-    
+
+
     if (countArray[4] === 4 || disabledCounter.length > 1) {
         allColorArrays.forEach(array => {
             disableRow(array);
@@ -119,8 +120,9 @@ const endGameClick = () => {
 };
 
 modalConfirm.addEventListener('click', () => {
-    for (let i = 0; i < 13; i++){
-        modalFlag.parentElement.parentElement.children[i].children[0].setAttribute('disabled', true);
+    for (let i = 0; i < 13; i++) {
+        // I wonder if there's a way to cleverly assign this an id on creation so you can just document.getElementById it instead of doing this hard-to-read dot notation chain
+        modalFlag.parentElement.payrentElement.children[i].firstElementChild.setAttribute('disabled', true);
     }
     disabledCounter.push(modalFlag.id);
     toggleModal();

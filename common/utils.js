@@ -1,10 +1,10 @@
 export function countChecks(checkboxArray) {
     let checksCounted = 0;
     for (let i = 0; i < checkboxArray.length; i++) {
-        if (checkboxArray[i].type === 'button'){
+        if (checkboxArray[i].type === 'button') {
             return checksCounted;
         }
-        else if (checkboxArray[i].children[0].checked === true) {
+        else if (checkboxArray[i].firstElementChild.checked === true) {
             checksCounted++;
         }
     }

@@ -34,24 +34,30 @@ if (highScoreUserScore < userScore) {
     // save user score as the new high score
     let newHighScore = makeHighScore(userName, userScore);
     saveHighScore(newHighScore);
-    
+
     // new high score css flag for ben's animations
     newHighScoreFlag = true;
 }
 
 if (newHighScoreFlag === true) {
+    /// you can add multiple classes at a time: div.classList.add("foo", "bar", "baz");    `
+
+    /*
+        [userNameSpan, userScoreSpan, highScoreNameSpan, highScoreScoreSpan].forEach((el, i) => el.classList.add['animated', 'bounceInDown', `delay-${i + 1}s`])
+        would get you pretty close in one line
+    */
     userNameSpan.classList.add('animated');
     userNameSpan.classList.add('bounceInDown');
     userNameSpan.classList.add('delay-1s');
-    
+
     userScoreSpan.classList.add('animated');
     userScoreSpan.classList.add('bounceInDown');
     userScoreSpan.classList.add('delay-2s');
-    
+
     highScoreNameSpan.classList.add('animated');
     highScoreNameSpan.classList.add('bounceInDown');
     highScoreNameSpan.classList.add('delay-3s');
-    
+
     highScoreScoreSpan.classList.add('animated');
     highScoreScoreSpan.classList.add('bounceInDown');
     highScoreScoreSpan.classList.add('delay-3s');

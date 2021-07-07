@@ -1,7 +1,7 @@
 const diceButton = document.querySelector('input[type=button]');
-diceButton.addEventListener('click', function() { rollDice();playAudio(); });
+diceButton.addEventListener('click', function () { rollDice(); playAudio(); });
 
-const rollDice = function() {
+const rollDice = function () {
     let i,
         faceValue,
         output = '',
@@ -10,6 +10,9 @@ const rollDice = function() {
     // Index 0 and 1 are white dice, 2 is red, 3 is yellow, 4 is green and 5 is blue
     let diceRollArray = [];
     for (i = 0; i < diceCount; i++) {
+        /*
+        I'd recommend an array here ['w', 'w', 'r', . . .]
+        */
         switch (i) {
             case 0:
                 color = 'w';
@@ -40,9 +43,9 @@ const rollDice = function() {
     return diceRollArray;
 };
 
-const playSound = document.getElementById('rollDiceAudio'); 
+const playSound = document.getElementById('rollDiceAudio');
 
-function playAudio() { 
-    playSound.play(); 
-} 
+function playAudio() {
+    playSound.play();
+}
 
